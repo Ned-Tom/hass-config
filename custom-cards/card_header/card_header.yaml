@@ -1,0 +1,110 @@
+card_header:
+  triggers_update: "all"
+  variables:
+    card_header_title: ""
+    card_header_navigate_path: ""
+    card_header_back_button: true
+    card_header_options_button: true
+  card_mod:
+    style: |
+        :host {
+          position: -webkit-sticky !important;
+          position: sticky !important;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 10;
+        }
+  show_icon: false
+  show_label: false
+  show_name: false
+  styles:
+    card:
+      - padding: 0
+      - font-size: '1.4rem'
+      - background: 'var(--card-background-color)'
+      - box-shadow: 'var(--ha-card-box-shadow)'
+      - border-radius: 0px
+      - font-weight: bold
+      - color: var(--primary-text-color)
+      - height: '56px'
+      - margin-bottom: 5px
+    grid:
+        - grid-template-areas: '"back title options"'
+        - grid-template-columns: "52px auto 52px"
+        - grid-template-rows: 1fr
+    custom_fields:
+  custom_fields:
+    back:
+      card:
+        type: custom:button-card
+        template: 
+          - card_header_button
+          - card_header_button_back
+        variables:
+          card_header_navigate_path: '[[[ return variables.card_header_navigate_path; ]]]'
+          card_header_back_button: '[[[ return variables.card_header_back_button; ]]]'
+    title: "[[[ return variables.card_header_title; ]]]"
+    options:
+      card:
+        type: custom:button-card
+        template: 
+          - card_header_button
+          - card_header_button_options
+        variables:
+          card_header_options_button: '[[[ return variables.card_header_options_button; ]]]'
+
+card_header_button:
+  show_name: false
+  show_icon: true
+  show_last_changed: false
+  styles:
+    card:
+      - padding: 0
+      - box-shadow: none
+    grid:
+      - grid-template-areas: '"i"'
+      - grid-template-rows: 1fr
+    img_cell:
+      - display: flex
+      - align-items: center
+      - height: '42px'
+      - padding-right: '0px'
+      - padding-left: '0px'
+    icon:
+      - display: flex
+      - justify-content: center
+      - align-items: center
+      - margin: '0px'
+
+card_header_button_back:
+  icon: 'mdi:arrow-left'
+  styles:
+    card:
+      - display: "[[[
+              if ( variables.card_header_back_button == true )
+                return 'block';
+              else
+                return 'none';
+            ]]]"
+    icon:
+      - height: '86%'
+  tap_action:
+    action: 'navigate'
+    navigation_path: '[[[ return variables.card_header_navigate_path; ]]]'
+
+card_header_button_options:
+  icon: 'mdi:cog-outline'
+  styles:
+    card:
+      - display: "[[[
+              if ( variables.card_header_options_button == true )
+                return 'block';
+              else
+                return 'none';
+            ]]]"
+    icon:
+      - height: '86%'
+  tap_action:
+    action: 'navigate'
+    navigation_path: '/config/dashboard'
