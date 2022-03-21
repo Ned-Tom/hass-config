@@ -32,8 +32,7 @@ The options button always navigates to the Setting's of HomeAssistant.
 
 ```yaml
 - type: 'custom:button-card'
-  template: 
-      - card_header
+  template: card_header
   variables:
       card_header_title: "Home"
       card_header_back_button: false
