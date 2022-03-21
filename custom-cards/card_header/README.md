@@ -2,7 +2,7 @@
 
 Header card for showing an title and back button at the top.
 
-![Header Preview.png](/home/tom/Projects/Git/hass-config/custom-cards/card_header/Header%20Preview.png)
+![Header Preview.png](Header%20Preview.png)
 
 *Thanks for the basic desing from @dmatik*
 [Source](https://github.com/dmatik/homeassistant-config/blob/master/homeassistant/config/lovelace_minimalist/templates/card_templates_custom/custom_card_header/card_header.yaml)
