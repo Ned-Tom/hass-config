@@ -1,0 +1,32 @@
+card_bubble:
+  show_icon: true
+  show_label: true
+  show_name: true
+  state:
+    - value: "on"
+      styles:
+        img_cell:
+          - background-color: rgba(var(--color-yellow),0.2)
+        icon:
+          - color: rgba(var(--color-yellow),1)
+    - value: "off"
+      styles:
+        img_cell:
+          - background-color: "var(--card-background-color)"
+        icon:
+          - color: rgba(var(--color-theme),.5)
+  styles:
+    name:
+      - font-size: "14px"
+      - margin-top: "10px"
+    img_cell:
+      - background-color: "var(--card-background-color)"
+      - border-radius: "50%"
+      - place-self: "center"
+      - width: "60px"
+      - height: "60px"
+      - box-shadow: 'var(--ha-card-box-shadow)'
+    card:
+      - padding: "5px"
+      - box-shadow: "none"
+      - background-color: "transparent"
