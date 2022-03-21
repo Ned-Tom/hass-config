@@ -1,0 +1,11 @@
+# Project information
+site_name: "Tom's hass-config"
+site_description: 'Tom's Homeassistatant Config and Custom card's.'
+site_author: 'Ned_Tom'
+
+# Repository
+repo_name: 'Ned-Tom/hass-config'
+repo_url: 'https://github.com/Ned-Tom/hass-config'
+
+# Copyright
+copyright: 'Copyright &copy; 2022 Ned_Tom'
