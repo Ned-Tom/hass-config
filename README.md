@@ -5,7 +5,7 @@
 
 Tom's Homeassistatant Config and Custom card's.
 
-![Mobile.gif](/Ned-Tom/hass-config/images/Mobile.gif)
+![Mobile.gif](/images/Mobile.gif)
 
 ## Thanks to:
 
