@@ -1,0 +1,234 @@
+#--------------------------------------#
+# Tab : Home                           #
+#--------------------------------------#
+
+title: Home
+path: home
+panel: true
+cards:
+  - type: vertical-stack
+    cards:
+      - type: 'custom:button-card'
+        template: card_header
+        variables:
+          card_header_title: "Home"
+          card_header_back_button: false
+          
+      - type: custom:layout-card
+        layout_type: custom:vertical-layout
+        layout:
+          width: 530
+          column_widths: 100%
+          margin: 0 auto
+          card_margin: 0
+          max_cols: 1
+          mediaquery:
+            "(max-width: 795px)":
+              margin: 0
+        cards:
+          - type: custom:layout-card
+            layout_type: custom:grid-layout
+            layout:
+              margin: 0
+              grid-template-columns: '400px 400px'
+              grid-template-rows: auto
+              grid-template-areas: |
+                '"rooms01 rooms02"
+                "rooms03"
+                "weer actions"
+                "afval persons"'
+              align-items: stretch
+              mediaquery:
+                "(max-width: 795px)":
+                  grid-template-columns: 1fr
+                  grid-template-areas: |
+                      '"rooms01"
+                      "rooms02"
+                      "rooms03"
+                      "weer"
+                      "actions"
+                      "afval"
+                      "persons"'
+            cards:
+              - type: horizontal-stack
+                grid-area: rooms01
+                cards:
+                  - type: custom:button-card
+                    template: card_navigate
+                    variables:
+                      ulm_card_navigate_path: livingroom
+                      ulm_card_navigate_title: Living Room
+                      ulm_card_navigate_icon: mdi:television                  
+                  - type: custom:button-card
+                    template: card_navigate
+                    variables:
+                      ulm_card_navigate_path: kitchen
+                      ulm_card_navigate_title: Kitchen
+                      ulm_card_navigate_icon: mdi:fridge-outline
+              - type: horizontal-stack
+                grid-area: rooms02
+                cards:
+                  - type: custom:button-card
+                    template: card_navigate
+                    variables:
+                      ulm_card_navigate_path: bethroom
+                      ulm_card_navigate_title: Bedroom
+                      ulm_card_navigate_icon: mdi:bed-queen-outline
+                  - type: custom:button-card
+                    template: card_navigate
+                    variables:
+                      ulm_card_navigate_path: hobbyroom
+                      ulm_card_navigate_title: Hobby
+                      ulm_card_navigate_icon: mdi:hammer-wrench
+              - type: horizontal-stack
+                grid-area: rooms03
+                cards:
+                  - type: custom:button-card
+                    template: card_navigate
+                    variables:
+                      ulm_card_navigate_path: energie
+                      ulm_card_navigate_title: Energie
+                      ulm_card_navigate_icon: mdi:home-lightning-bolt-outline
+                  - type: custom:button-card
+                    template: card_navigate
+                    variables:
+                      ulm_card_navigate_path: cameras
+                      ulm_card_navigate_title: Surveillance
+                      ulm_card_navigate_icon: mdi:cctv
+            
+              - type: custom:gap-card
+                height: 10px
+                view_layout:
+                  show:
+                    mediaquery: "(min-width: 795px)"
+
+              ## Weer
+              - type: vertical-stack
+                grid-area: weer
+                cards:
+                - type: 'custom:button-card'
+                  template: card_title
+                  name: Weather
+                  label: 'Local weahter forecast' 
+                - type: "custom:button-card"
+                  template: card_weather
+                  entity: weather.<WEATHER ENTITY>
+                  variables:
+                    ulm_card_weather_name: " "
+                    ulm_card_weather_primary_info:
+                      - wind_speed
+                      - precipitation_probability
+                    ulm_card_weather_backdrop:
+                      fade: true
+
+              ## Shorcuts
+              - type: vertical-stack
+                grid-area: actions
+                cards:
+                - type: 'custom:button-card'
+                  template: card_title
+                  name: Actions
+                  label: 'Shorcuts' 
+
+                - type: horizontal-stack
+                  cards:
+                    - type: 'custom:button-card'
+                      template: light_bubble
+                      entity: group.<GROUP NAME>
+                      icon: mdi:all-inclusive
+                      name: All lights
+                    - type: 'custom:button-card'
+                      template: light_bubble
+                      entity: group.<GROUP NAME>
+                      icon: mdi:countertop-outline
+                      name: Kitchen
+                    - type: 'custom:button-card'
+                      template: light_bubble
+                      entity: group.<GROUP NAME>
+                      icon: mdi:sofa-outline
+                      name: livingroom
+                    - type: 'custom:button-card'
+                      template: light_bubble
+                      entity: group.<GROUP NAME>
+                      icon: mdi:bed-double-outline
+                      name: Bedroom
+                      
+              ## Afval
+              - type: vertical-stack
+                grid-area: afval
+                cards:
+                - type: 'custom:button-card'
+                  template: card_title
+                  name: 'Waste Collection'
+                  label: 'Waste Collection schedule' 
+
+                - type: horizontal-stack
+                  cards:
+                    - type: 'custom:button-card'
+                      template: card_generic_swap
+                      entity: sensor.<WASTE ENITIY TODAY>
+                      name: Vandaag
+                      icon: mdi:calendar-blank
+
+                    - type: 'custom:button-card'
+                      template: card_generic_swap
+                      entity: sensor.<WASTE ENITIY TOMORROW>
+                      name: Morgen
+                      icon: mdi:calendar-today
+
+                - type: horizontal-stack
+                  cards:
+                    - type: 'custom:button-card'
+                      template: card_generic_swap
+                      entity: sensor.<GREENWASTE ENITIY>
+                      name: GFT
+                      icon: mdi:fruit-watermelon
+
+                    - type: 'custom:button-card'
+                      template: card_generic_swap
+                      entity: sensor.<PAPERWASTE ENITIY
+                      name: Papier
+                      icon: mdi:file
+
+                - type: horizontal-stack
+                  cards:
+                    - type: 'custom:button-card'
+                      template: card_generic_swap
+                      entity: sensor.<PLASTCWASTE ENITIY>
+                      name: Plastic
+                      icon: mdi:bottle-soda
+
+                    - type: 'custom:button-card'
+                      template: card_generic_swap
+                      entity: sensor.<GRAYWASTE ENITIY>
+                      name: Rest
+                      icon: mdi:trash-can
+
+              ## Persons
+              - type: vertical-stack
+                grid-area: persons
+                cards:
+                - type: 'custom:button-card'
+                  template: card_title
+                  name: Persons
+                  label: 'Location info' 
+
+                - type: horizontal-stack
+                  cards:
+                    - type: "custom:button-card"
+                      template: custom_card_imswel_person
+                      variables:
+                        ulm_card_imswel_person_entity: person.<NAME>
+                        ulm_card_imswel_person_wifi_tracker: device_tracker.<WIFI>
+                        ulm_card_imswel_person_gps_tracker: device_tracker.<GPS>
+                        ulm_card_imswel_person_findmy_script: script.<SCRIPT NAME>
+                        ulm_card_imswel_person_use_entity_picture: true
+
+                    - type: "custom:button-card"
+                      template: custom_card_imswel_person
+                      variables:
+                        ulm_card_imswel_person_entity: person.<NAME>
+                        ulm_card_imswel_person_wifi_tracker: device_tracker.<WIFI>
+                        ulm_card_imswel_person_gps_tracker: device_tracker.<GPS>
+                        ulm_card_imswel_person_findmy_script: script.<SCRIPT NAME>
+                        ulm_card_imswel_person_use_entity_picture: true

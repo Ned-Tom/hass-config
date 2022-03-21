@@ -1,0 +1,31 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+automation: !include automations.yaml
+
+frontend:
+  themes: !include_dir_merge_named themes
+  extra_module_url:
+    - /local/card-mod.js
+
+scene: !include scenes.yaml
+
+script: !include scripts.yaml
+
+group: !include groups.yaml
+
+light: !include lights.yaml
+
+sensor: !include sensors.yaml
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+# lovelace
+lovelace:
+  mode: yaml
+
+# Custom Intergrations
+browser_mod:
+  prefix: "browser_"

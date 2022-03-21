@@ -1,0 +1,23 @@
+---
+button_card_templates: !include_dir_merge_named "buttoncard-templates" # Change to your instalation type
+
+# Load Modules, Not nessasery when using Minimalist-ui intergration
+# resources:
+#   - url: /local/button-card.js
+#     type: module
+#   - url: /local/light-entity-card.js
+#     type: module
+#   - url: /local/light-popup-card.js
+#     type: module
+#   - url: /local/mini-graph-card-bundle.js
+#     type: module
+#   - url: /local/mini-media-player-bundle.js
+#     type: module
+#   - url: /local/my-cards.js
+#     type: module
+#   - url: /local/layout-card.js
+#     type: module
+#   - url: /local/simple-weather-card-bundle.js
+#     type: module
+
+views: !include_dir_list lovelace
