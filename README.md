@@ -13,9 +13,9 @@ Tom's Homeassistatant Config and Custom card's.
 
 ## Custom Cards
 
-- Card_Bubble : [Google home inspired button](/custom-cards-card_bubble/README.md)
-- Card_Camera : [Simple Live Camera Card](/custom-cards-card_bubble/README.md)
-- Card_Header : [Custom Header navigation whit tile](/custom-cards-card_bubble/README.md)
+- Card_Bubble : [Google home inspired button](/custom-cards/card_bubble/README.md)
+- Card_Camera : [Simple Live Camera Card](/custom-cards/card_bubble/README.md)
+- Card_Header : [Custom Header navigation whit tile](/custom-cards/card_bubble/README.md)
 
 ## Thanks to:
 
