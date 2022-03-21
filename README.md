@@ -4,7 +4,7 @@
 | ----------------------------------------------------------- |
 
 Tom's Homeassistatant Config and Custom card's.
-![/images/buymeacoffee.png](https://www.buymeacoffee.com/nedtom)
+[![buymeacoffee](/images/buymeacoffee.png)](https://www.buymeacoffee.com/nedtom)
 
 ## Previews
 
