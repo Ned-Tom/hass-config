@@ -5,7 +5,11 @@
 
 Tom's Homeassistatant Config and Custom card's.
 
-![Mobile.gif](/images/Mobile.gif)
+## Previews
+
+| Mobile                            |                                   |                                     |
+| --------------------------------- | --------------------------------- | ----------------------------------- |
+| ![Mobile.gif](/images/Mobile.gif) | ![Tablet.gif](/images/Tablet.gif) | ![Desktop.gif](/images/Desktop.gif) |
 
 ## Thanks to:
 
