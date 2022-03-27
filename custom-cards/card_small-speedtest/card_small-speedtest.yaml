@@ -1,0 +1,78 @@
+---
+card_small-speedtest:
+  variables:
+    entity_up: "sensor.speedtest_upload"
+    entity_down: "sensor.speedtest_download"
+    entity_ping: "sensor.speedtest_ping"
+  show_icon: false
+  show_name: false
+  show_label: false
+  styles:
+    grid:
+      - grid-template-areas: "'ping down up'"
+      - grid-template-columns: "auto auto auto"
+      - grid-template-rows: "100%"
+      - justify-items: stretch
+      - align-items: stretch
+      - column-gap: "3px"
+    card:
+      - padding: "12px"
+      - margin: "0"
+      - cursor: default
+      - z-index: "2"
+
+  custom_fields:
+    up:
+      card: 
+        type: 'custom:button-card'
+        template: small_speedtest_item
+        entity: "[[[ return variables.entity_up; ]]]"
+        name: "[[[ return states[variables.entity_up].attributes.unit_of_measurement ]]]"
+        icon: mdi:arrow-up-circle-outline
+    down:
+      card: 
+        type: 'custom:button-card'
+        template: small_speedtest_item
+        entity: "[[[ return variables.entity_down; ]]]"
+        name: "[[[ return states[variables.entity_down].attributes.unit_of_measurement ]]]"
+        icon: mdi:arrow-down-circle-outline
+    ping:
+      card: 
+        type: 'custom:button-card'
+        template: small_speedtest_item
+        entity: "[[[ return variables.entity_ping; ]]]"
+        name: "[[[ return states[variables.entity_ping].attributes.unit_of_measurement ]]]"
+        icon: mdi:swap-horizontal-circle-outline        
+
+small_speedtest_item:
+  show_icon: true
+  show_label: false
+  show_name: true
+  custom_fields:
+    data: "[[[ return entity.state ]]]"
+  styles:
+    grid:
+      - grid-template-areas: "'i data n'"
+      - grid-template-columns: "25px min-content min-content"
+      - grid-template-rows: "1fr"
+    name:
+      - font-size: "12px"
+      - filter: "opacity(60%)"
+      - font-weight: "bold"
+    img_cell:
+      - width: "20px"
+      - height: "25px"
+      - margin-right: "5px"
+    icon:
+      - width: 100%
+      - color: "rgba(var(--color-theme),0.9)"
+    card:
+      - padding: "10px"
+      - margin: "0"
+      - box-shadow: "none"
+      - background-color: "rgba(var(--color-theme),0.05)"
+    custom_fields:
+      data:
+        - font-size: "18px"
+        - font-weight: "bold"
+        - margin: "0 5px"
