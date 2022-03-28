@@ -2,6 +2,7 @@
 site_name: "Tom's Homeassistatant Config"
 site_description: "Tom's Homeassistatant Config and Custom card's."
 site_author: 'Ned_Tom'
+edit_uri: "https://github.com/Ned-Tom/hass-config/tree/main/docs"
 
 # Theme
 theme:
@@ -19,6 +20,9 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
+  features:
+    - "navigation.tabs"
+
 
 # Plugins
 plugins:
@@ -34,6 +38,9 @@ plugins:
       material_alternate: true
       nav_translations:
         nl:
+          "Home": "Start"
+          # "": ""
+          # "": ""
           "Custom cards": "Aangepaste Kaarten"
           "Setup": "Instalatie"
 
@@ -48,6 +55,12 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.superfences
+
+# # navigatie
+# nav:
+#   - "Home" : "index.md"
+#   - "Custom cards": 
+#     - ". | custom_cards/**.md"
 
 # Repository
 repo_name: 'Ned-Tom/hass-config'
