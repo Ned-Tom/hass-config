@@ -11,7 +11,6 @@ Small Speedtest card that shows your current internet speed.
 
 - [x] Basic Card 
 - [x] Theme intergration
-- [ ] 
 
 ## Configuration:
 
