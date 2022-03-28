@@ -1,7 +1,53 @@
 # Project information
-site_name: "Tom's hass-config"
-site_description: 'Tom's Homeassistatant Config and Custom card's.'
+site_name: "Tom's Homeassistatant Config"
+site_description: "Tom's Homeassistatant Config and Custom card's."
 site_author: 'Ned_Tom'
+
+# Theme
+theme:
+  name: material
+  palette: 
+    - media: "(prefers-color-scheme: light)"
+      primary: blue
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: indigo
+      scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+# Plugins
+plugins:
+  - i18n:
+      default_language: en
+      languages:
+        en:
+          name: English
+          build: true
+        nl:
+          name: Dutch
+          build: true
+      material_alternate: true
+      nav_translations:
+        nl:
+          "Custom cards": "Aangepaste Kaarten"
+          "Setup": "Instalatie"
+
+
+# Markdown Extensions 
+markdown_extensions:
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.emoji
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.superfences
 
 # Repository
 repo_name: 'Ned-Tom/hass-config'
