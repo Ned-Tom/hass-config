@@ -1,5 +1,5 @@
 ---
-card_small-speedtest:
+card_speedtest_small:
   variables:
     entity_up: "sensor.speedtest_upload"
     entity_down: "sensor.speedtest_download"
