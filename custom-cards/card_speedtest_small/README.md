@@ -1,8 +1,11 @@
-# card_small-speedtest:
+# card_speedtest_small:
 
-Smal Speedtest card that shows your internet speed
+| :exclamation: WARNING, you need the [Speedtest.net](https://www.home-assistant.io/integrations/speedtestdotnet/) intergration to be installed! |
+| ---------------------------------------------------------------------------------------------------------------------------------------------- |
 
-![preview](card_small-speedtest-preview.png)
+Small Speedtest card that shows your current internet speed.
+
+![preview](card_speedtest_small_preview.png)
 
 ## ToDo:
 
