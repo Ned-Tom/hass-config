@@ -1,3 +1,7 @@
+---
+hide:
+  - toc
+---
 # Ronde knop kaart
 
 Een simpele ronde actie knop kaart.

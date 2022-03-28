@@ -1,4 +1,10 @@
-# Home
+---
+title: Home
+hide:
+  - toc
+  - navigation
+---
+# Welcome to Tom's Documentation!
 
 > :exclamation: This repository is still a Work in Progress!
 

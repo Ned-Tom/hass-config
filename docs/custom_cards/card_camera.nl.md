@@ -1,3 +1,7 @@
+---
+hide:
+  - toc
+---
 # Camera Kaart
 
 Een live camera kaart met opties.

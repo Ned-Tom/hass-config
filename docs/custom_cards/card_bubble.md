@@ -1,3 +1,7 @@
+---
+hide:
+  - toc
+---
 # Round button card
 
 Basic round button action card.

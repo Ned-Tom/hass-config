@@ -1,3 +1,7 @@
+---
+hide:
+  - toc
+---
 # Camera Card
 
 A live camera card whit options.

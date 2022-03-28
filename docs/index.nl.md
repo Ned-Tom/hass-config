@@ -1,4 +1,10 @@
-# Start
+---
+title: Start
+hide:
+  - toc
+  - navigation
+---
+# Welcome to Tom's Documentatie!
 
 > :exclamation: Aan deze bibliotheek word nog gewerkt!
 

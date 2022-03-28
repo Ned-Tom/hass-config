@@ -1,3 +1,7 @@
+---
+hide:
+  - toc
+---
 # Small speedtest card
 
 > :exclamation: WARNING, you need the [Speedtest.net](https://www.home-assistant.io/integrations/speedtestdotnet/) intergration to be installed!

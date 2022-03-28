@@ -2,17 +2,17 @@
 hide:
   - toc
 ---
-# Navigation Card
+# Navigatie Card
 
-Header card for showing an title and back button at the top.
+Navigatie kaart voor het weergeven van een pagina titel, terug en instellingen knop aan de bovenkant.
 
 ![Header Preview](/images/Header_Preview-dark.png#only-dark)
 ![Header Preview](/images/Header_Preview-light.png#only-light)
 
-*Thanks for the basic desing from @dmatik*
-[Source](https://github.com/dmatik/homeassistant-config/blob/master/homeassistant/config/lovelace_minimalist/templates/card_templates_custom/custom_card_header/card_header.yaml)
+*Bedankt voor de basis kaard van @dmatik*
+[Bron](https://github.com/dmatik/homeassistant-config/blob/master/homeassistant/config/lovelace_minimalist/templates/card_templates_custom/custom_card_header/card_header.yaml)
 
-## ToDo:
+## TeDoen:
 
 - [x] Basic Card form @dmatik
 - [x] Add aditional button to the right

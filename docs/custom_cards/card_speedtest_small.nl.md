@@ -1,3 +1,7 @@
+---
+hide:
+  - toc
+---
 # Kleine internet snelheid kaart
 
 > :exclamation: WAARSCHUWING, je moet de [Speedtest.net](https://www.home-assistant.io/integrations/speedtestdotnet/) intergratie hebben geinstaleerd!
