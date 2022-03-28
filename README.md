@@ -15,10 +15,10 @@ Tom's Homeassistatant Config and Custom card's.
 
 ## Custom Cards
 
-- Card_Bubble : [Google home inspired button](/custom-cards/card_bubble/README.md)
-- Card_Camera : [Simple Live Camera Card](/custom-cards/card_camera/README.md)
-- Card_Header : [Custom Header navigation whit tile](/custom-cards/card_header/README.md)
-- card_small-speedtest : [Small Internet Speed test statistic card](/custom-cards/card_small-speedtest/README.md)
+- Bubble button Card : [Google home inspired button](/custom-cards/card_bubble/README.md)
+- Camera Card : [Simple Live Camera Card](/custom-cards/card_camera/README.md)
+- Header Card : [Custom Header navigation whit tile](/custom-cards/card_header/README.md)
+- Small Speedtest Card : [Small Internet Speed test statistic card](/custom-cards/card_speedtest_small/README.md)
 
 ## Thanks to:
 
