@@ -20,20 +20,12 @@ card_camera:
   custom_fields:
     cam:
       card:
-        type: "picture-elements"
+        type: picture-entity
         aspect_ratio: "16:9"
         show_name: false
         show_state: false
         image: "/local/image/testscreen.jpg"
-        elements:
-           - type: image
-             camera_image: "[[[ return variables.camera_image ]]]"
-             camera_view: "live"
-             style:
-               left: "50%"
-               top: "50%"
-               width: "100%"
-               height: "100%"
+        entity: '[[[ return entity.entity_id ]]]'
         styles:
           card:
             - z-index: 1
