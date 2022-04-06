@@ -6,13 +6,12 @@ hide:
 
 A live camera card whit options.
 
-## ToDo:
-
-- [x] Basic card
-- [x] Theme intergration
-- [x] show recording state
-- [x] custom name variable
-- [x] Show  motion trigger state #Whit some help of @AndyVR
+??? note "ToDo"
+    - [x] Basic card
+    - [x] Theme intergration
+    - [x] show recording state
+    - [x] custom name variable
+    - [x] Show  motion trigger state #Whit some help of @AndyVR
 
 ## Configuration:
 

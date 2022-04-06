@@ -9,14 +9,13 @@ Basic round button action card.
 ![Bubble preview.png](/images/Bubble%20preview-light.png#only-light)
 ![Bubble preview.png](/images/Bubble%20preview-dark.png#only-dark)
 
-## ToDo:
-
-- [x] Basic card
-- [x] Theme intergration
-- [ ] Custom color variable
-- [ ] Notifcation
-- [ ] Notification counter
-- [ ] PopUp
+???+ note "ToDo"
+    - [x] Basic card
+    - [x] Theme intergration
+    - [ ] Custom color variable
+    - [ ] Notifcation
+    - [ ] Notification counter
+    - [ ] PopUp
 
 ## Sample:
 

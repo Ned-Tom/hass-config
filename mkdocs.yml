@@ -54,6 +54,8 @@ markdown_extensions:
   - pymdownx.emoji
   - pymdownx.tasklist:
       custom_checkbox: true
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences
 
 # # navigatie

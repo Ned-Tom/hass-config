@@ -9,14 +9,13 @@ Een simpele ronde actie knop kaart.
 ![Bubble preview.png](/images/Bubble%20preview-light.png#only-light)
 ![Bubble preview.png](/images/Bubble%20preview-dark.png#only-dark)
 
-## TeDoen:
-
-- [x] Basis kaart
-- [x] Thema intergratie
-- [ ] Kleur variable
-- [ ] Melding icoon
-- [ ] Lamp teller melding
-- [ ] PopUp
+???+ note "TeDoen"
+    - [x] Basis kaart
+    - [x] Thema intergratie
+    - [ ] Kleur variable
+    - [ ] Melding icoon
+    - [ ] Lamp teller melding
+    - [ ] PopUp
 
 ## Voorbeeld:
 

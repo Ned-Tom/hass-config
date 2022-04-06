@@ -6,13 +6,12 @@ hide:
 
 Een live camera kaart met opties.
 
-## TeDoen:
-
-- [x] Basis kaart
-- [x] Thema intergratie
-- [x] Opname status
-- [x] Aangepaste naam
-- [x] Bewegings melding weergave #Met de hulp van @AndyVR
+??? note "TeDoen"
+    - [x] Basis kaart
+    - [x] Thema intergratie
+    - [x] Opname status
+    - [x] Aangepaste naam
+    - [x] Bewegings melding weergave #Met de hulp van @AndyVR
 
 ## Instellingen:
 

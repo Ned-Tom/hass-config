@@ -4,17 +4,17 @@ hide:
 ---
 # Kleine internet snelheid kaart
 
-> :exclamation: WAARSCHUWING, je moet de [Speedtest.net](https://www.home-assistant.io/integrations/speedtestdotnet/) intergratie hebben geinstaleerd!
+!!! warning "WAARSCHUWING"
+    je moet de [Speedtest.net](https://www.home-assistant.io/integrations/speedtestdotnet/) intergratie hebben geinstaleerd!
 
 Kleine versie van de Internet snelheids test kaart dat je hudige internet snelheid weergeeft.
 
 ![preview](/images/card_speedtest_small_preview.png#only-light)
 ![preview](/images/card_speedtest_small_preview-dark.png#only-dark)
 
-## TeDoen:
-
-- [x] Basis Kaart 
-- [x] Thema intergratie
+??? note "TeDoen"
+    - [x] Basis Kaart 
+    - [x] Thema intergratie
 
 ## Instellingen:
 
