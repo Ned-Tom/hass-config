@@ -49,7 +49,7 @@ small_speedtest_item:
   show_label: false
   show_name: true
   custom_fields:
-    data: "[[[ return entity.state ]]]"
+    data: "[[[ if(entity.state == 'unavailable'){ return '--' }else{ return entity.state } ]]]"
   styles:
     grid:
       - grid-template-areas: "'i data n'"
