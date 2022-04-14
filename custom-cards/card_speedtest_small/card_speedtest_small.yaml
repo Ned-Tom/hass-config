@@ -16,7 +16,7 @@ card_speedtest_small:
       - align-items: stretch
       - column-gap: "3px"
     card:
-      - padding: "12px"
+      - padding: "10px"
       - margin: "0"
       - cursor: default
       - z-index: "2"
@@ -61,7 +61,7 @@ small_speedtest_item:
       - font-weight: "bold"
     img_cell:
       - width: "20px"
-      - height: "25px"
+      - height: "26px"
       - margin-right: "5px"
     icon:
       - width: 100%
