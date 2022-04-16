@@ -8,7 +8,7 @@ An other alternative Room card desing
 
 - [x] Basic Card
 - [x] Theme intergration
-- [x] Option to remove background
+- [x] Option to change background color
 - [ ] Better Theme intergration / static colors
 - [ ] more customization options
 
@@ -38,6 +38,5 @@ An other alternative Room card desing
     room_info_stuffix: "°C"
     room_lights: sensor.kitchen_lights_on
 ```
-
 
 *This configuration needs an custom sensor being created in your config
