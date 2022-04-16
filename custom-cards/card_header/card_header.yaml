@@ -5,6 +5,7 @@ card_header:
     card_header_navigate_path: ""
     card_header_back_button: true
     card_header_options_button: true
+    card_header_background: true
   card_mod:
     style: |
         :host {
@@ -22,13 +23,15 @@ card_header:
     card:
       - padding: 0
       - font-size: '1.4rem'
-      - background: '[[[ if(variables.card_header_background){ return "var(--card-background-color)"; }else{ return "none"; } ]]]'
-      - box-shadow: '[[[ if(variables.card_header_background){ return "var(--ha-card-box-shadow)"; }else{ return "none"; } ]]]'
+      - background: '[[[ if(variables.card_header_background){ return "var(--card-background-color)"; }else{ return "var(--primary-background-color)"; } ]]]'
+      # - box-shadow: '[[[ if(variables.card_header_background){ return "var(--ha-card-box-shadow)"; }else{ return "none"; } ]]]'
+      - box-shadow: none
       - border-radius: 0px
       - font-weight: bold
       - color: var(--primary-text-color)
       - height: '56px'
       - margin-bottom: 5px
+      - border-bottom: '1px solid var(--divider-color)'
     grid:
         - grid-template-areas: '"back title options"'
         - grid-template-columns: "52px auto 52px"
