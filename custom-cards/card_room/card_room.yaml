@@ -1,0 +1,122 @@
+---
+### Card Light ###
+card_room:
+  variables:
+    room_path: '/path'
+    room_name: 'name'
+    room_color: '#52E1E2'
+    room_icon: mdi:alert-box
+    room_info: "notset" #'sensor.name'
+    room_info_stuffix: '°C'
+    room_lights: "notset" #'group.name'
+  show_icon: true
+  show_name: true
+  show_label: true
+  tap_action:
+    action: "navigate"
+    navigation_path: "[[[ return variables.room_path; ]]]"
+  styles:
+    card:
+      - background-color: '[[[ return variables.room_color ]]]'
+      - padding: '10px 15px'
+    grid:
+      - grid-template-areas: "'namestate' 'info'"
+      - grid-template-columns: "1fr"
+      - grid-template-rows: "2fr 1fr"
+      - row-gap: "5px"
+      - align-items: "stretch"
+      - height: 90px
+  custom_fields:
+    namestate:
+      card:
+        type: "custom:button-card"
+        show_icon: false
+        name: '[[[ return variables.room_name ]]]'
+        custom_fields:
+          stats: |
+            [[[
+              if(variables.room_lights == 'notset'){
+                return " ";
+              }else{
+                var data = String(states[variables.room_lights].state);
+                if(data == 0){
+                  return "All Off";
+                }else if(data == 1){
+                  return "1 Light On";
+                }else{
+                  return data+" Lights On";
+                }
+              }
+            ]]]
+        styles:
+          card:
+            - background-color: transparent
+            - box-shadow: none
+            - border-radius: '0'
+          name:
+            - color: 'var(--card-background-color)'
+            - justify-self: "start"
+            - font-weight: "bold"
+            - font-size : "16px"
+          grid:
+            - grid-template-areas: "'n' 'stats'"
+            - grid-template-columns: "1fr"
+            - grid-template-rows: "min-content min-content"
+          custom_fields:
+            stats:
+              - color: 'var(--card-background-color)'
+              - justify-self: "start"
+              - font-size : "14px"
+        tap_action:
+          action: "navigate"
+          navigation_path: "[[[ return variables.room_path; ]]]"
+
+
+    info:
+      card:
+        type: "custom:button-card"
+        name: |
+          [[[
+            if(variables.room_info == 'notset'){
+              return " ";
+            }else{
+              return states[variables.room_info].state+" "+variables.room_info_stuffix;
+            }          
+          ]]]
+        icon: '[[[ return variables.room_icon ]]]'
+        styles:
+          card:
+            - background-color: 'var(--card-background-color)'
+            - color: '[[[ return variables.room_color ]]]'
+          icon:
+            - place-self: "center"
+            - width: "20px"
+            - height: "20px"
+            - margin: "0 0 2px 8px"
+            - color: '[[[ return variables.room_color ]]]'
+          name:
+            - font-size : "16px"
+            - justify-self: "end"
+            - padding-right: "10px"
+          grid:
+            - grid-template-areas: |
+                [[[
+                  if(variables.room_info == 'notset'){
+                    return "'i'";
+                  }else{
+                    return "'i n'";
+                  }
+                ]]]
+            - grid-template-columns: |
+                [[[
+                  if(variables.room_info == 'notset'){
+                    return "1fr";
+                  }else{
+                    return "min-content auto";
+                  }
+                ]]]
+            - grid-template-rows: "1fr"
+            - align-items: "stretch"
+        tap_action:
+          action: "navigate"
+          navigation_path: "[[[ return variables.room_path; ]]]"

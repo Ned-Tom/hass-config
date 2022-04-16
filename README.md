@@ -19,6 +19,7 @@ Tom's Homeassistatant Config and Custom card's.
 - Camera Card : [Simple Live Camera Card](/custom-cards/card_camera/README.md)
 - Header Card : [Custom Header navigation whit tile](/custom-cards/card_header/README.md)
 - Small Speedtest Card : [Small Internet Speed test statistic card](/custom-cards/card_speedtest_small/README.md)
+- Room Card : [Colored Room card](/custom-cards/card_room/README.md)
 
 ## Thanks to:
 
