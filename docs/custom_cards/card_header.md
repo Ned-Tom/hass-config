@@ -34,7 +34,7 @@ The options button always navigates to the Setting's of HomeAssistant.
 | card_header_navigate_path  |         | yes      | Path of the left button            |
 | card_header_back_button    | true    | no       | Visability of the left button      |
 | card_header_options_button | true    | no       | Visability of the right button     |
-| card_header_background     | true    | no       | Background style                   |
+| card_header_background     | true    | no       | shows a background true / false    |
 
 ## Sample:
 
