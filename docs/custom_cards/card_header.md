@@ -1,10 +1,7 @@
 ---
 hide:
-
-- toc
-
+    - toc
 ---
-
 # Navigation Card
 
 Header card for showing an title and back button at the top.
