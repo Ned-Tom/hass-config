@@ -1,13 +1,17 @@
 ---
 hide:
-  - toc
+
+- toc
+
 ---
+
 # Navigation Card
 
 Header card for showing an title and back button at the top.
 
-![Header Preview](/images/Header_Preview-dark.png#only-dark)
-![Header Preview](/images/Header_Preview-light.png#only-light)
+| Default                                                                                                                     | No background                                                                                                                         |
+| --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| ![Header Preview](/images/Header_Preview-dark.png#only-dark) ![Header Preview](/images/Header_Preview-light.png#only-light) | ![Header Preview](/images/Header_Preview-dark-nobg.png#only-dark) ![Header Preview](/images/Header_Preview-light-nobg.png#only-light) |
 
 *Thanks for the basic desing from @dmatik*
 [Source](https://github.com/dmatik/homeassistant-config/blob/master/homeassistant/config/lovelace_minimalist/templates/card_templates_custom/custom_card_header/card_header.yaml)
@@ -26,10 +30,11 @@ The options button always navigates to the Setting's of HomeAssistant.
 
 | Variable                   | Default | Required | Notes                              |
 | -------------------------- | ------- | -------- | ---------------------------------- |
-| card_header_title          |         | no       | Text show in the center of the bar |
-| card_header_navigate_path  |         | no       | Path of the left button            |
+| card_header_title          |         | yes      | Text show in the center of the bar |
+| card_header_navigate_path  |         | yes      | Path of the left button            |
 | card_header_back_button    | true    | no       | Visability of the left button      |
 | card_header_options_button | true    | no       | Visability of the right button     |
+| card_header_background     | true    | no       | Background style                   |
 
 ## Sample:
 
