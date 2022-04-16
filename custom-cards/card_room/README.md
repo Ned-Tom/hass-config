@@ -10,6 +10,7 @@ An other alternative Room card desing
 - [x] Theme intergration
 - [x] Option to change background color
 - [ ] Better Theme intergration / static colors
+- [ ] Translations
 - [ ] more customization options
 
 ## Configuration:
