@@ -56,21 +56,21 @@ small_speedtest_item:
       - grid-template-columns: "25px min-content min-content"
       - grid-template-rows: "1fr"
     name:
-      - font-size: "12px"
+      - font-size: "10px"
       - filter: "opacity(60%)"
       - font-weight: "bold"
     img_cell:
       - width: "20px"
       - height: "26px"
-      - margin-right: "5px"
+      - margin: "2px 5px 2px 0"
     icon:
       - width: 100%
       - color: "rgba(var(--color-theme),0.9)"
     card:
-      - padding: "10px"
+      - padding: "8px 6px"
       - margin: "0"
       - box-shadow: "none"
-      - background-color: "rgba(var(--color-theme),0.05)"
+      # - background-color: "rgba(var(--color-theme),0.05)"
     custom_fields:
       data:
         - font-size: "18px"
