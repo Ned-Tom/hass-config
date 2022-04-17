@@ -1,4 +1,5 @@
-card_camera:
+---
+tcc_camera:
   triggers_update: "all"
   variables:
     camera_title: '[[[ return entity.attributes.friendly_name ]]]'

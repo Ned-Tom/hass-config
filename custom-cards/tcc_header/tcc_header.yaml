@@ -1,4 +1,5 @@
-card_header:
+---
+tcc_header:
   triggers_update: "all"
   variables:
     card_header_title: ""

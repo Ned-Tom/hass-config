@@ -1,4 +1,5 @@
-card_bubble:
+---
+tcc_bubble:
   show_icon: true
   show_label: true
   show_name: true

@@ -1,5 +1,5 @@
 ---
-card_speedtest_small:
+tcc_speedtest_small:
   variables:
     entity_up: "sensor.speedtest_upload"
     entity_down: "sensor.speedtest_download"
@@ -70,7 +70,6 @@ small_speedtest_item:
       - padding: "8px 6px"
       - margin: "0"
       - box-shadow: "none"
-      # - background-color: "rgba(var(--color-theme),0.05)"
     custom_fields:
       data:
         - font-size: "18px"

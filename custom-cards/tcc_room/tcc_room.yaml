@@ -1,14 +1,11 @@
 ---
-### Card Light ###
-card_room:
+tcc_room:
   variables:
-    room_path: '/path'
-    room_name: 'name'
     room_color: '#52E1E2'
     room_icon: mdi:alert-box
-    room_info: "notset" #'sensor.name'
+    room_info: "notset"
     room_info_stuffix: '°C'
-    room_lights: "notset" #'group.name'
+    room_lights: "notset"
   show_icon: true
   show_name: true
   show_label: true
@@ -70,8 +67,6 @@ card_room:
         tap_action:
           action: "navigate"
           navigation_path: "[[[ return variables.room_path; ]]]"
-
-
     info:
       card:
         type: "custom:button-card"
