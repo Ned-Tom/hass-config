@@ -7,7 +7,13 @@ Tom's Homeassistatant Config and Custom card's.
 
 [![buymeacoffee](/images/buymeacoffee.png)](https://www.buymeacoffee.com/nedtom)
 
-## Previews
+## preview
+
+| Mobile                             |
+| ---------------------------------- |
+| ![Mobile.gif](/images/Mobile2.gif) |
+
+## Grid system preview
 
 | Mobile                            | Tablet                            | Desktop                             |
 | --------------------------------- | --------------------------------- | ----------------------------------- |
