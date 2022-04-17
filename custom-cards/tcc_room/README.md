@@ -9,7 +9,7 @@ An other alternative Room card desing
 - [x] Basic Card
 - [x] Theme intergration
 - [x] Option to change background color
-- [ ] Better Theme intergration / static colors
+- [x] Better Theme intergration / static colors
 - [ ] Translations
 - [ ] more customization options
 
@@ -34,7 +34,7 @@ An other alternative Room card desing
     room_path: kitchen
     room_name: Kitchen
     room_icon: mdi:fridge-outline
-    room_color: "#EB8500"
+    room_color: red
     room_info: "sensor.temperature_18"
     room_info_stuffix: "°C"
     room_lights: sensor.kitchen_lights_on
