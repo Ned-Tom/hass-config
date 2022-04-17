@@ -20,10 +20,10 @@ An other alternative Room card desing
 | room_path         |               | yes      | Path to an other view              |
 | room_name         |               | yes      | Room name                          |
 | room_icon         | mdi:alert-box | no       | Info icon                          |
-| room_color        | #52E1E2       | no       | Custom background color            |
+| room_color        | <color>       | no       | Custom background color *          |
 | room_info         | true          | no       | Temperture sensor or other sensor  |
 | room_info_stuffix | °C            | no       | Stuffix to be added after the info |
-| room_lights       |               | no       | Sensor whit light on count *       |
+| room_lights       |               | no       | Sensor whit light on count **      |
 
 ## Sample:
 
@@ -40,4 +40,12 @@ An other alternative Room card desing
     room_lights: sensor.kitchen_lights_on
 ```
 
-*This configuration needs an custom sensor being created in your config
+*The default color is Gray you can use the folow colors that work in light and dark mode:
+- gray
+- red
+- green
+- yello
+- blue
+- violet
+
+**This configuration needs an custom sensor being created in your config

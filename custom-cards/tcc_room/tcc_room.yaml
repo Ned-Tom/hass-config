@@ -14,7 +14,31 @@ tcc_room:
     navigation_path: "[[[ return variables.room_path; ]]]"
   styles:
     card:
-      - background-color: '[[[ return variables.room_color ]]]'
+      - background-color: |
+          [[[ 
+            switch(variables.room_color){
+              case 'red':
+                return 'var(--google-red)'
+                break;
+              case 'green':
+                return 'var(--google-green)'
+                break;
+              case 'yellow':
+                return 'var(--google-yellow)'
+                break;
+              case 'blue':
+                return 'var(--google-blue)'
+                break;
+              case 'violet':
+                return 'var(--google-violet)'
+                break;
+              case 'grey':
+                return 'var(--google-grey)'
+                break;
+              default:
+                return 'var(--google-grey)'
+            }
+          ]]]
       - padding: '10px 15px'
     grid:
       - grid-template-areas: "'namestate' 'info'"
@@ -82,13 +106,61 @@ tcc_room:
         styles:
           card:
             - background-color: 'var(--card-background-color)'
-            - color: '[[[ return variables.room_color ]]]'
+            - color: |
+                [[[ 
+                  switch(variables.room_color){
+                    case 'red':
+                      return 'var(--google-red)'
+                      break;
+                    case 'green':
+                      return 'var(--google-green)'
+                      break;
+                    case 'yellow':
+                      return 'var(--google-yellow)'
+                      break;
+                    case 'blue':
+                      return 'var(--google-blue)'
+                      break;
+                    case 'violet':
+                      return 'var(--google-violet)'
+                      break;
+                    case 'grey':
+                      return 'var(--google-grey)'
+                      break;
+                    default:
+                      return '#52E1E2'
+                  }
+                ]]]
           icon:
             - place-self: "center"
             - width: "20px"
             - height: "20px"
             - margin: "0 0 2px 8px"
-            - color: '[[[ return variables.room_color ]]]'
+            - color: |
+                [[[ 
+                  switch(variables.room_color){
+                    case 'red':
+                      return 'var(--google-red)'
+                      break;
+                    case 'green':
+                      return 'var(--google-green)'
+                      break;
+                    case 'yellow':
+                      return 'var(--google-yellow)'
+                      break;
+                    case 'blue':
+                      return 'var(--google-blue)'
+                      break;
+                    case 'violet':
+                      return 'var(--google-violet)'
+                      break;
+                    case 'grey':
+                      return 'var(--google-grey)'
+                      break;
+                    default:
+                      return '#52E1E2'
+                  }
+                ]]]
           name:
             - font-size : "16px"
             - justify-self: "end"
