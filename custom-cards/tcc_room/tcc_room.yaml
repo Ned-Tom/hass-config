@@ -1,5 +1,6 @@
 ---
 tcc_room:
+  triggers_update: "all"
   variables:
     room_color: '#52E1E2'
     room_icon: mdi:alert-box
