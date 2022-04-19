@@ -11,7 +11,8 @@ hide:
 
 Tom's Homeassistatant Config and Custom card's.
 
-![Preview](images/Preview_mobile.gif)
+![Preview](images/Preview_mobile-light.gif#only-light)
+![Preview](images/Preview_mobile-dark.gif#only-dark)
 
 [![buymeacoffee](images/buymeacoffee.png)](https://www.buymeacoffee.com/nedtom)
 
