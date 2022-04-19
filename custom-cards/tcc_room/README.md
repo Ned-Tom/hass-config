@@ -1,4 +1,4 @@
-# Card_Room
+# TCC_Room
 
 An other alternative Room card desing 
 
@@ -31,13 +31,13 @@ An other alternative Room card desing
 - type: custom:button-card
   template: tcc_room
   variables:
-    room_path: kitchen
-    room_name: Kitchen
-    room_icon: mdi:fridge-outline
-    room_color: red
+    room_path: "kitchen"
+    room_name: "Kitchen"
+    room_icon: "mdi:fridge-outline"
+    room_color: "red"
     room_info: "sensor.temperature_18"
     room_info_stuffix: "°C"
-    room_lights: sensor.kitchen_lights_on
+    room_lights: "sensor.kitchen_lights_on"
 ```
 
 *The default color is Gray you can use the folow colors that work in light and dark mode:

@@ -12,6 +12,7 @@ Een live camera kaart met opties.
     - [x] Opname status
     - [x] Aangepaste naam
     - [x] Bewegings melding weergave #Met de hulp van @AndyVR
+    - [ ] Screenshtot toevoegen
 
 ## Instellingen:
 
@@ -26,7 +27,7 @@ Een live camera kaart met opties.
 
 ```yaml
 - type: 'custom:button-card'
-  template: card_camera
+  template: tcc_camera
   entity: "<CAMERA ENITITY>"
   variables:
       camera_motion: "binary_sensor.<MOTION SENSOR>"

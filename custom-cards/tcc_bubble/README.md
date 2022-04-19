@@ -1,4 +1,4 @@
-# Card_Bubble
+# TCC_Bubble
 
 basic circluar button action card.
 
@@ -11,7 +11,7 @@ basic circluar button action card.
 - [ ] Custom color seting
 - [ ] Notifcation
 - [ ] Notification counter
-- [ ] more in the future.
+- [ ] PopUp
 
 ## Sample:
 

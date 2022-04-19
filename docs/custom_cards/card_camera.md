@@ -27,7 +27,7 @@ A live camera card whit options.
 
 ```yaml
 - type: 'custom:button-card'
-  template: card_camera
+  template: tcc_camera
   entity: "<CAMERA ENITITY>"
   variables:
       camera_motion: "binary_sensor.<MOTION SENSOR>"

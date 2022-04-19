@@ -1,4 +1,4 @@
-# card_speedtest_small:
+# TCC_speedtest:
 
 | :exclamation: WARNING, you need the [Speedtest.net](https://www.home-assistant.io/integrations/speedtestdotnet/) intergration to be installed! |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -16,26 +16,27 @@ Navigatie kaart voor het weergeven van een pagina titel, terug en instellingen k
     - [x] Basic Card form @dmatik
     - [x] Add aditional button to the right
     - [x] Theme intergration
-    - [ ] better variables
-    - [ ] more customization options
-    - [ ] drop down or popup feature?
+    - [x] Optie on achtergrond te verwijderen
+    - [x] better variables
+    - [ ] Meer personalisatie in de toekomst
 
 ## Configuration:
 
 The options button always navigates to the Setting's of HomeAssistant.
 
-| Variable                   | Default | Required | Notes                              |
-| -------------------------- | ------- | -------- | ---------------------------------- |
-| card_header_title          |         | no       | Text show in the center of the bar |
-| card_header_navigate_path  |         | no       | Path of the left button            |
-| card_header_back_button    | true    | no       | Visability of the left button      |
-| card_header_options_button | true    | no       | Visability of the right button     |
+| Waarde                | Standaard | Required | Notities                                           |
+| --------------------- | --------- | -------- | -------------------------------------------------- |
+| header_title          |           | ja       | Text in het midden van de kaart                    |
+| header_navigate_path  |           | ja       | locatie link van linker / terug knop               |
+| header_back_button    | true      | nee      | Zightbaarheid van de linker knop                   |
+| header_options_button | true      | nee      | Zightbaarheid van de rechter knop                  |
+| header_background     | true      | nee      | Waneer "true" zal de achtergrond worden verwijderd |
 
 ## Sample:
 
 ```yaml
 - type: 'custom:button-card'
-  template: card_header
+  template: tcc_header
   variables:
       card_header_title: "Home"
       card_header_back_button: false

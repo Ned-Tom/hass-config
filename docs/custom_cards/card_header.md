@@ -17,27 +17,27 @@ Header card for showing an title and back button at the top.
     - [x] Basic Card form @dmatik
     - [x] Add aditional button to the right
     - [x] Theme intergration
-    - [ ] better variables
-    - [ ] more customization options
-    - [ ] drop down or popup feature?
+    - [x] Option to remove background
+    - [x] better variables
+    - [ ] more customization options in the future
 
 ## Configuration:
 
 The options button always navigates to the Setting's of HomeAssistant.
 
-| Variable                   | Default | Required | Notes                              |
-| -------------------------- | ------- | -------- | ---------------------------------- |
-| card_header_title          |         | yes      | Text show in the center of the bar |
-| card_header_navigate_path  |         | yes      | Path of the left button            |
-| card_header_back_button    | true    | no       | Visability of the left button      |
-| card_header_options_button | true    | no       | Visability of the right button     |
-| card_header_background     | true    | no       | shows a background true / false    |
+| Variable              | Default | Required | Notes                                |
+| --------------------- | ------- | -------- | ------------------------------------ |
+| header_title          |         | no       | Text show in the center of the bar   |
+| header_navigate_path  |         | no       | Path of the left button              |
+| header_back_button    | true    | no       | Visability of the left button        |
+| header_options_button | true    | no       | Visability of the right button       |
+| header_background     | true    | no       | When false removes the background    |
 
 ## Sample:
 
 ```yaml
 - type: 'custom:button-card'
-  template: card_header
+  template: tcc_header
   variables:
       card_header_title: "Home"
       card_header_back_button: false

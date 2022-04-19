@@ -9,8 +9,8 @@ hide:
 
 Kleine versie van de Internet snelheids test kaart dat je hudige internet snelheid weergeeft.
 
-![preview](/images/card_speedtest_small_preview.png#only-light)
-![preview](/images/card_speedtest_small_preview-dark.png#only-dark)
+![preview](/images/speedtest_small_preview.png#only-light)
+![preview](/images/speedtest_small_preview-dark.png#only-dark)
 
 ??? note "TeDoen"
     - [x] Basis Kaart 
@@ -30,7 +30,7 @@ De instellingen knop stuurt je altijd naar de installingen pagina van "HomeAssis
 
 ```yaml
 - type: 'custom:button-card'
-  template: card_speedtest_small
+  template: tcc_speedtest_small
   variables:
       entity_up: "sensor.speedtest_upload"
       entity_down: "sensor.speedtest_download"
