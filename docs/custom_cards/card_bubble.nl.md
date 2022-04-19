@@ -6,8 +6,8 @@ hide:
 
 Een simpele ronde actie knop kaart.
 
-![Bubble preview.png](/images/Bubble%20preview-light.png#only-light)
-![Bubble preview.png](/images/Bubble%20preview-dark.png#only-dark)
+![Bubble preview.png](../images/Bubble%20preview-light.png#only-light)
+![Bubble preview.png](../images/Bubble%20preview-dark.png#only-dark)
 
 ???+ note "TeDoen"
     - [x] Basis kaart

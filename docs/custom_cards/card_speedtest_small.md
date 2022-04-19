@@ -9,8 +9,8 @@ hide:
 
 Small Speedtest card that shows your current internet speed.
 
-![preview](/images/speedtest_small_preview.png#only-light)
-![preview](/images/speedtest_small_preview-dark.png#only-dark)
+![preview](../images/speedtest_small_preview.png#only-light)
+![preview](../images/speedtest_small_preview-dark.png#only-dark)
 
 ??? note "ToDo"
     - [x] Basic Card 

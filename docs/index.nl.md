@@ -11,9 +11,9 @@ hide:
 
 Tom's Homeassistatant Configuratie en aangepaste kaarten.
 
-![buymeacoffee](/images/Preview_mobile.gif)
+![Preview](images/Preview_mobile.gif)
 
-[![buymeacoffee](/images/buymeacoffee.png)](https://www.buymeacoffee.com/nedtom)
+[![buymeacoffee](images/buymeacoffee.png)](https://www.buymeacoffee.com/nedtom)
 
 ## Bedankt aan:
 

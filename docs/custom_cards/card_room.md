@@ -6,8 +6,8 @@ hide:
 
 An other alternative Room card desing 
 
-![Preview](/images/Room-Card_preview-light.png#only-light)
-![Preview](/images/Room-Card_preview-dark.png#only-dark)
+![Preview](../images/Room-Card_preview-light.png#only-light)
+![Preview](../images/Room-Card_preview-dark.png#only-dark)
 
 ???+ note "ToDo"
     - [x] Basic Card

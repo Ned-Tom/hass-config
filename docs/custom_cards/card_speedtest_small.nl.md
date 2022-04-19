@@ -9,8 +9,8 @@ hide:
 
 Kleine versie van de Internet snelheids test kaart dat je hudige internet snelheid weergeeft.
 
-![preview](/images/speedtest_small_preview.png#only-light)
-![preview](/images/speedtest_small_preview-dark.png#only-dark)
+![preview](../images/speedtest_small_preview.png#only-light)
+![preview](../images/speedtest_small_preview-dark.png#only-dark)
 
 ??? note "TeDoen"
     - [x] Basis Kaart 

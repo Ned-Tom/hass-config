@@ -6,8 +6,9 @@ hide:
 
 Navigatie kaart voor het weergeven van een pagina titel, terug en instellingen knop aan de bovenkant.
 
-![Header Preview](/images/Header_Preview-dark.png#only-dark)
-![Header Preview](/images/Header_Preview-light.png#only-light)
+| Standaard                                                                                                                   | Zonder achtergrond                                                                                                                    |
+| --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| ![Header Preview](../images/Header_Preview-dark.png#only-dark) ![Header Preview](../images/Header_Preview-light.png#only-light) | ![Header Preview](../images/Header_Preview-dark-nobg.png#only-dark) ![Header Preview](../images/Header_Preview-light-nobg.png#only-light) |
 
 *Bedankt voor de basis kaard van @dmatik*
 [Bron](https://github.com/dmatik/homeassistant-config/blob/master/homeassistant/config/lovelace_minimalist/templates/card_templates_custom/custom_card_header/card_header.yaml)

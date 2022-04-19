@@ -8,7 +8,7 @@ Header card for showing an title and back button at the top.
 
 | Default                                                                                                                     | No background                                                                                                                         |
 | --------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| ![Header Preview](/images/Header_Preview-dark.png#only-dark) ![Header Preview](/images/Header_Preview-light.png#only-light) | ![Header Preview](/images/Header_Preview-dark-nobg.png#only-dark) ![Header Preview](/images/Header_Preview-light-nobg.png#only-light) |
+| ![Header Preview](../images/Header_Preview-dark.png#only-dark) ![Header Preview](../images/Header_Preview-light.png#only-light) | ![Header Preview](../images/Header_Preview-dark-nobg.png#only-dark) ![Header Preview](../images/Header_Preview-light-nobg.png#only-light) |
 
 *Thanks for the basic desing from @dmatik*
 [Source](https://github.com/dmatik/homeassistant-config/blob/master/homeassistant/config/lovelace_minimalist/templates/card_templates_custom/custom_card_header/card_header.yaml)
