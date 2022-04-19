@@ -6,9 +6,12 @@ hide:
 ---
 # Welcome to Tom's Documentatie!
 
-> :exclamation: Aan deze bibliotheek word nog gewerkt!
+!!! bug "WAARSCHUWING"
+    Aan deze bibliotheek word nog gewerkt!
 
 Tom's Homeassistatant Configuratie en aangepaste kaarten.
+
+![buymeacoffee](/images/Preview_mobile.gif)
 
 [![buymeacoffee](/images/buymeacoffee.png)](https://www.buymeacoffee.com/nedtom)
 

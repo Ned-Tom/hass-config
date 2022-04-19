@@ -6,9 +6,12 @@ hide:
 ---
 # Welcome to Tom's Documentation!
 
-> :exclamation: This repository is still a Work in Progress!
+!!! bug "WARNING"
+    This repository is still a Work in Progress!
 
 Tom's Homeassistatant Config and Custom card's.
+
+![buymeacoffee](/images/Preview_mobile.gif)
 
 [![buymeacoffee](/images/buymeacoffee.png)](https://www.buymeacoffee.com/nedtom)
 
