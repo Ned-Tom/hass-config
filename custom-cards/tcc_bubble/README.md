@@ -11,14 +11,13 @@ basic circluar button action card.
 - [ ] Custom color seting
 - [ ] Notifcation
 - [ ] Notification counter
-- [ ] PopUp
 - [ ] more in the future.
 
 ## Sample:
 
 ```yaml
  - type: 'custom:button-card'
-   template: card_bubble
+   template: tcc_bubble
    entity: group.all_lights
    icon: mdi:all-inclusive
    name: All lights

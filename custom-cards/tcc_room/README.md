@@ -29,7 +29,7 @@ An other alternative Room card desing
 
 ```yaml
 - type: custom:button-card
-  template: card_room
+  template: tcc_room
   variables:
     room_path: kitchen
     room_name: Kitchen

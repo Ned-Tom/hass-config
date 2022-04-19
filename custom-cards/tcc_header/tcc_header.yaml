@@ -2,11 +2,11 @@
 tcc_header:
   triggers_update: "all"
   variables:
-    card_header_title: ""
-    card_header_navigate_path: ""
-    card_header_back_button: true
-    card_header_options_button: true
-    card_header_background: true
+    header_title: ""
+    header_navigate_path: ""
+    header_back_button: true
+    header_options_button: true
+    header_background: true
   card_mod:
     style: |
         :host {
@@ -24,7 +24,7 @@ tcc_header:
     card:
       - padding: 0
       - font-size: '1.4rem'
-      - background: '[[[ if(variables.card_header_background){ return "var(--card-background-color)"; }else{ return "var(--primary-background-color)"; } ]]]'
+      - background: '[[[ if(variables.header_background){ return "var(--card-background-color)"; }else{ return "var(--primary-background-color)"; } ]]]'
       # - box-shadow: '[[[ if(variables.card_header_background){ return "var(--ha-card-box-shadow)"; }else{ return "none"; } ]]]'
       - box-shadow: none
       - border-radius: 0px
@@ -43,22 +43,22 @@ tcc_header:
       card:
         type: custom:button-card
         template: 
-          - card_header_button
-          - card_header_button_back
+          - tcc_header_button
+          - tcc_header_button_back
         variables:
-          card_header_navigate_path: '[[[ return variables.card_header_navigate_path; ]]]'
-          card_header_back_button: '[[[ return variables.card_header_back_button; ]]]'
-    title: "[[[ return variables.card_header_title; ]]]"
+          card_header_navigate_path: '[[[ return variables.header_navigate_path; ]]]'
+          card_header_back_button: '[[[ return variables.header_back_button; ]]]'
+    title: "[[[ return variables.header_title; ]]]"
     options:
       card:
         type: custom:button-card
         template: 
-          - card_header_button
-          - card_header_button_options
+          - tcc_header_button
+          - tcc_header_button_options
         variables:
-          card_header_options_button: '[[[ return variables.card_header_options_button; ]]]'
+          card_header_options_button: '[[[ return variables.header_options_button; ]]]'
 
-card_header_button:
+tcc_header_button:
   show_name: false
   show_icon: true
   show_last_changed: false
@@ -82,12 +82,12 @@ card_header_button:
       - align-items: center
       - margin: '0px'
 
-card_header_button_back:
+tcc_header_button_back:
   icon: 'mdi:arrow-left'
   styles:
     card:
       - display: "[[[
-              if ( variables.card_header_back_button == true )
+              if ( variables.header_back_button == true )
                 return 'block';
               else
                 return 'none';
@@ -96,14 +96,14 @@ card_header_button_back:
       - height: '86%'
   tap_action:
     action: 'navigate'
-    navigation_path: '[[[ return variables.card_header_navigate_path; ]]]'
+    navigation_path: '[[[ return variables.header_navigate_path; ]]]'
 
-card_header_button_options:
+tcc_header_button_options:
   icon: 'mdi:cog-outline'
   styles:
     card:
       - display: "[[[
-              if ( variables.card_header_options_button == true )
+              if ( variables.header_options_button == true )
                 return 'block';
               else
                 return 'none';

@@ -11,8 +11,6 @@ Small Speedtest card that shows your current internet speed.
 
 - [x] Basic Card 
 - [x] Theme intergration
-- [ ] more customization options
-- [ ] more in the future.
 
 ## Configuration:
 
@@ -28,7 +26,7 @@ The options button always navigates to the Setting's of HomeAssistant.
 
 ```yaml
 - type: 'custom:button-card'
-  template: small-speedtest
+  template: tcc_speedtest_small
   variables:
       entity_up: "sensor.speedtest_upload"
       entity_down: "sensor.speedtest_download"

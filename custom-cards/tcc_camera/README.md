@@ -9,7 +9,6 @@ a Live camera cart whit options.
 - [x] show recording state
 - [x] custom name variable
 - [x] Show trigger / motion state #Whit some help of @AndyVR
-- [ ] more in the future.
 
 ## Configuration:
 
@@ -24,7 +23,7 @@ a Live camera cart whit options.
 
 ```yaml
 - type: 'custom:button-card'
-  template: card_camera
+  template: tcc_camera
   entity: "<CAMERA ENITITY>"
   variables:
       camera_motion: "binary_sensor.<MOTION SENSOR>"
