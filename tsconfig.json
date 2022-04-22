@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    // "target": "es2016",
+    // "module": "commonjs",,
+    "target": "es2017",
+    // "module": "esnext",
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "rootDir": "./src",
+    "outFile": "tcc.js",
+    "outDir": "./",
+    // "removeComments": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "allowJs": true
+  },
+  "include": ["./src/*"],
+  "exclude": ["node_modules"]
+}

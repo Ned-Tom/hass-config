@@ -1,0 +1,20 @@
+{
+  "name": "tcc-builder",
+  "version": "0.0.1",
+  "description": "Typescript helpers for building the tcc recource for Home-assistant",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ned-Tom/hass-config.git"
+  },
+  "author": "Ned_Tom",
+  "bugs": {
+    "url": "https://github.com/Ned-Tom/hass-config/issues"
+  },
+  "homepage": "https://github.com/Ned-Tom/hass-config#readme"
+}

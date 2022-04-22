@@ -1,1 +1,5 @@
 site/*
+node_modules
+package-lock.json
+tcc.js
+tcc.js.map
