@@ -17,6 +17,6 @@
     "sourceMap": true,
     "allowJs": true
   },
-  "include": ["./src/*"],
+  "include": ["src/cards/*", "./src/*"],
   "exclude": ["node_modules"]
 }
