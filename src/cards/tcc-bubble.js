@@ -6,17 +6,21 @@ class tccbubblecard extends HTMLElement {
     // Initialize the content if it's not there yet.
     if (!this.content) {
       this.innerHTML = `
-        <ha-card style="padding:10px 16px;
+        <ha-card style="padding:5px;
         background-color: transparent;
           box-shadow: none;">
           <div class="button" style="
           padding:8px;
           border-radius: 50%;
           background-color: var(--card-background-color);
-          box-shadow: var(--ha-card-box-shadow);">
-            <ha-icon id="tcc-bc-icon" icon="mdi:alert-box"></ha-icon>
+          box-shadow: var(--ha-card-box-shadow);
+          width: 60px;
+          height: 60px;
+          padding: 0;
+          margin: 0 auto;">
+            <ha-icon style="display:block; text-algin: center;" id="tcc-bc-icon" icon="mdi:alert-box"></ha-icon>
           </div>
-          <p class="tcc-bc-name">name</p>
+          <p style="width:100%; text-align: center;" class="tcc-bc-name">name</p>
         </ha-card>`
       this.name = this.querySelector('.tcc-bc-name')
       this.icon = this.querySelector('#tcc-bc-icon')
@@ -27,6 +31,7 @@ class tccbubblecard extends HTMLElement {
     const stateStr = state ? state.state : 'unavailable'
 
     this.name.innerHTML = this.config.name
+    this.icon.setAttribute("icon", this.config.icon)
   }
 
   setConfig(config) {
