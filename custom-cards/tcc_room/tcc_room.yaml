@@ -2,7 +2,7 @@
 tcc_room:
   triggers_update: "all"
   variables:
-    room_color: '#52E1E2'
+    room_color: "notset"
     room_icon: mdi:alert-box
     room_info: "notset"
     room_info_stuffix: '°C'
@@ -19,25 +19,28 @@ tcc_room:
           [[[ 
             switch(variables.room_color){
               case 'red':
-                return 'var(--google-red)'
+                return 'var(--google-red, #F54436)'
                 break;
               case 'green':
-                return 'var(--google-green)'
+                return 'var(--google-green, #01C852)'
                 break;
               case 'yellow':
-                return 'var(--google-yellow)'
+                return 'var(--google-yellow, #FF9101)'
                 break;
               case 'blue':
-                return 'var(--google-blue)'
+                return 'var(--google-blue, #3D5AFE)'
                 break;
               case 'violet':
-                return 'var(--google-violet)'
+                return 'var(--google-violet, #661FFF)'
                 break;
               case 'grey':
-                return 'var(--google-grey)'
+                return 'var(--google-grey, #BBBBBB)'
+                break;
+              case 'notset':
+                return 'var(--card-background-color, white)'
                 break;
               default:
-                return 'var(--google-grey)'
+                return 'var(--google-grey, var(--card-background-color, white))'
             }
           ]]]
       - padding: '10px 15px'
@@ -47,7 +50,7 @@ tcc_room:
       - grid-template-rows: "2fr 1fr"
       - row-gap: "5px"
       - align-items: "stretch"
-      - height: 90px
+      - min-height: 90px
   custom_fields:
     namestate:
       card:
@@ -76,7 +79,8 @@ tcc_room:
             - box-shadow: none
             - border-radius: '0'
           name:
-            - color: 'var(--card-background-color)'
+            # - color: 'var(--card-background-color)'
+            - color: '[[[ if(variables.room_color == "notset"){ return "black"; }else{ return "var(--card-background-color"; } ]]]'
             - justify-self: "start"
             - font-weight: "bold"
             - font-size : "16px"
@@ -86,7 +90,8 @@ tcc_room:
             - grid-template-rows: "min-content min-content"
           custom_fields:
             stats:
-              - color: 'var(--card-background-color)'
+              # - color: 'var(--card-background-color, var(--primary-text-color, black))'
+              - color: '[[[ if(variables.room_color == "notset"){ return "black"; }else{ return "var(--card-background-color"; } ]]]'
               - justify-self: "start"
               - font-size : "14px"
         tap_action:
@@ -106,30 +111,33 @@ tcc_room:
         icon: '[[[ return variables.room_icon ]]]'
         styles:
           card:
-            - background-color: 'var(--card-background-color)'
+            - background-color: 'var(--card-background-color, white)'
             - color: |
                 [[[ 
                   switch(variables.room_color){
                     case 'red':
-                      return 'var(--google-red)'
+                      return 'var(--google-red, #F54436)'
                       break;
                     case 'green':
-                      return 'var(--google-green)'
+                      return 'var(--google-green, #01C852)'
                       break;
                     case 'yellow':
-                      return 'var(--google-yellow)'
+                      return 'var(--google-yellow, #FF9101)'
                       break;
                     case 'blue':
-                      return 'var(--google-blue)'
+                      return 'var(--google-blue, #3D5AFE)'
                       break;
                     case 'violet':
-                      return 'var(--google-violet)'
+                      return 'var(--google-violet, #661FFF)'
                       break;
                     case 'grey':
-                      return 'var(--google-grey)'
+                      return 'var(--google-grey, #BBBBBB)'
+                      break;
+                    case 'notset':
+                      return 'var(--primary-text-color, black)'
                       break;
                     default:
-                      return '#52E1E2'
+                      return 'var(--primary-text-color, black)'
                   }
                 ]]]
           icon:
@@ -141,25 +149,28 @@ tcc_room:
                 [[[ 
                   switch(variables.room_color){
                     case 'red':
-                      return 'var(--google-red)'
+                      return 'var(--google-red, #F54436)'
                       break;
                     case 'green':
-                      return 'var(--google-green)'
+                      return 'var(--google-green, #01C852)'
                       break;
                     case 'yellow':
-                      return 'var(--google-yellow)'
+                      return 'var(--google-yellow, #FF9101)'
                       break;
                     case 'blue':
-                      return 'var(--google-blue)'
+                      return 'var(--google-blue, #3D5AFE)'
                       break;
                     case 'violet':
-                      return 'var(--google-violet)'
+                      return 'var(--google-violet, #661FFF)'
                       break;
                     case 'grey':
-                      return 'var(--google-grey)'
+                      return 'var(--google-grey, #BBBBBB)'
+                      break;
+                    case 'notset':
+                      return 'var(--primary-text-color, black)'
                       break;
                     default:
-                      return '#52E1E2'
+                      return 'var(--primary-text-color, black)'
                   }
                 ]]]
           name:
