@@ -21,6 +21,7 @@ theme:
         icon: material/toggle-switch
         name: Switch to light mode
   features:
+    - content.code.annotate
     - "navigation.tabs"
 
 
@@ -41,6 +42,7 @@ plugins:
           "Home": "Start"
           # "": ""
           # "": ""
+          "My config": "Mijn configuratie"
           "Custom cards": "Aangepaste Kaarten"
           "Setup": "Instalatie"
 
