@@ -47,7 +47,7 @@ tcc_room:
     grid:
       - grid-template-areas: "'namestate' 'info'"
       - grid-template-columns: "1fr"
-      - grid-template-rows: "2fr 1fr"
+      - grid-template-rows: "1.5fr 1fr"
       - row-gap: "5px"
       - align-items: "stretch"
       - min-height: 90px
