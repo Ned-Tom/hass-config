@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+         <loc>.</loc>
+         <lastmod>2022-04-24</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="en/"/>
+         <xhtml:link rel="alternate" hreflang="nl" href="nl/"/>
+         
+    </url>
+    <url>
+         <loc>custom_cards/card_bubble/</loc>
+         <lastmod>2022-04-24</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="en/custom_cards/card_bubble/"/>
+         <xhtml:link rel="alternate" hreflang="nl" href="nl/custom_cards/card_bubble/"/>
+         
+    </url>
+    <url>
+         <loc>custom_cards/card_camera/</loc>
+         <lastmod>2022-04-24</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="en/custom_cards/card_camera/"/>
+         <xhtml:link rel="alternate" hreflang="nl" href="nl/custom_cards/card_camera/"/>
+         
+    </url>
+    <url>
+         <loc>custom_cards/card_header/</loc>
+         <lastmod>2022-04-24</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="en/custom_cards/card_header/"/>
+         <xhtml:link rel="alternate" hreflang="nl" href="nl/custom_cards/card_header/"/>
+         
+    </url>
+    <url>
+         <loc>custom_cards/card_room/</loc>
+         <lastmod>2022-04-24</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="en/custom_cards/card_room/"/>
+         <xhtml:link rel="alternate" hreflang="nl" href="nl/custom_cards/card_room/"/>
+         
+    </url>
+    <url>
+         <loc>custom_cards/card_speedtest_small/</loc>
+         <lastmod>2022-04-24</lastmod>
+         <changefreq>daily</changefreq>
+         <xhtml:link rel="alternate" hreflang="en" href="en/custom_cards/card_speedtest_small/"/>
+         <xhtml:link rel="alternate" hreflang="nl" href="nl/custom_cards/card_speedtest_small/"/>
+         
+    </url>
+</urlset>
