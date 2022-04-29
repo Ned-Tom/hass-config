@@ -14,7 +14,7 @@ import {
 
 registerCustomCard({
   type: 'tcc-bubble',
-  name: "TCC Light Card",
+  name: "TCC Light Bubble Card",
   description: "Card for light or Group entity",
 });
 
@@ -103,7 +103,7 @@ export class TCCBubbleCard extends LitElement {
   static get styles(): CSSResultGroup {
     return css`
       .tccBubble{
-        padding:5px;
+        padding: 5px;
         background-color: transparent;
         box-shadow: none;
       }
@@ -120,11 +120,12 @@ export class TCCBubbleCard extends LitElement {
         transition-timing-function: ease-out;
       }
       .tccBubble > p{
-        width:100%; 
+        width: 100%; 
         text-align: center;
+        margin: 5px 0;
       }
       .tccBubble > .button > ha-icon{
-        display:block; 
+        display: block; 
         text-align: center;
         line-height: 58px;
         width: 60px;

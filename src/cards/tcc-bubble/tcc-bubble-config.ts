@@ -9,7 +9,7 @@ declare global {
 
 // TODO Add your configuration elements here for type-checking
 export interface TCCBubbleCardConfig extends LovelaceCardConfig {
-  entity?: string;
+  entity: string;
   // type: string;
   name?: string;
   icon?: string;
