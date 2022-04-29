@@ -29,7 +29,7 @@ Tom's Homeassistatant Config and Custom card's.
 
 ## Thanks to:
 
-- @RomRider for Button Card:  https://github.com/custom-cards/button-card
-- @thomasloven for Layout Card: https://github.com/thomasloven/lovelace-layout-card
-- @UI-Lovelace-Minimalist for the card desing and theme: https://ui-lovelace-minimalist.github.io/UI/
-- @dmatik for Headercard and inspiration: https://github.com/dmatik/homeassistant-config
+- @thomasloven for Layout Card: [Layout-Card](https://github.com/thomasloven/lovelace-layout-card)
+- @maykar for Kiok mode : [maykar/kiosk-mode](https://github.com/maykar/kiosk-mode)
+- @UI-Lovelace-Minimalist for the theme: [Lovelace-Minimalist](https://ui-lovelace-minimalist.github.io/UI/)
+- @dmatik for Headercard and inspiration: [Config](https://github.com/dmatik/homeassistant-config)
