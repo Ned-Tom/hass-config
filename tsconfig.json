@@ -15,8 +15,10 @@
     "strict": true,
     "skipLibCheck": true,
     "sourceMap": true,
-    "allowJs": true
+    "allowJs": true,
+    "experimentalDecorators": true
   },
-  "include": ["src/cards/*", "./src/*"],
+  "include": ["src/cards/*", "./src/tcc.js"],
+  // "include": ["./src/tcc.js"],
   "exclude": ["node_modules"]
 }
