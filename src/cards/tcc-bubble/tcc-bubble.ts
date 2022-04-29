@@ -1,15 +1,16 @@
 import { LitElement, html, TemplateResult, css, PropertyValues, CSSResultGroup } from 'lit';
-import { customElement, property, state } from 'lit/decorators';
+import { customElement, property, state } from 'lit/decorators.js';
 import { registerCustomCard } from "../helpers";
-// import {
-//   HomeAssistant,
-//   hasConfigOrEntityChanged,
-//   hasAction,
-//   ActionHandlerEvent,
-//   handleAction,
-//   LovelaceCardEditor,
-//   getLovelace,
-// } from 'custom-card-helpers';
+import type { TCCBubbleCardConfig } from './tcc-bubble-config';
+import {
+  HomeAssistant,
+  hasConfigOrEntityChanged,
+  hasAction,
+  ActionHandlerEvent,
+  handleAction,
+  LovelaceCardEditor,
+  getLovelace,
+} from 'custom-card-helpers';
 
 registerCustomCard({
   type: 'tcc-bubble',
@@ -18,6 +19,96 @@ registerCustomCard({
 });
 
 @customElement('tcc-bubble')
-export class tccbubblecard extends LitElement {
+export class TCCBubbleCard extends LitElement {
+  // public static async getConfigElement(): Promise<LovelaceCardEditor> {
+  //   await import('./editor');
+  //   return document.createElement('boilerplate-card-editor');
+  // }
 
+  public static getStubConfig(): Record<string, unknown> {
+    return {};
+  }
+
+  // TODO Add any properities that should cause your element to re-render here
+  // https://lit.dev/docs/components/properties/
+  @property({ attribute: false }) public hass!: HomeAssistant;
+
+  @state() private config!: TCCBubbleCardConfig;
+
+  // https://lit.dev/docs/components/properties/#accessors-custom
+  public setConfig(config: TCCBubbleCardConfig): void {
+    // TODO Check for required fields and that they are of the proper format
+    if (!config) {
+      throw new Error('You need to define an entity')
+      // throw new Error(localize('common.invalid_configuration'));
+    }
+
+    if (config.test_gui) {
+      getLovelace().setEditMode(true);
+    }
+
+    this.config = {
+      name: 'Boilerplate',
+      ...config,
+    };
+  }
+
+  // // https://lit.dev/docs/components/properties/#accessors-custom
+  // public setConfig(config: BoilerplateCardConfig): void {
+  //   // TODO Check for required fields and that they are of the proper format
+  //   if (!config) {
+  //     throw new Error(localize('common.invalid_configuration'));
+  //   }
+
+  //   if (config.test_gui) {
+  //     getLovelace().setEditMode(true);
+  //   }
+
+  //   this.config = {
+  //     name: 'Boilerplate',
+  //     ...config,
+  //   };
+  // }
+
+  // https://lit.dev/docs/components/rendering/
+  protected render(): TemplateResult | void {
+    return html`
+      <ha-card class="tccBubble">
+        <div class="button">
+          <ha-icon id="tcc-bc-icon" icon="${ `mdi:alert-box` }"></ha-icon>
+        </div>
+        <p>${ `name` }</p>
+      </ha-card>
+    `;
+  }
+
+  // https://lit.dev/docs/components/styles/
+  static get styles(): CSSResultGroup {
+    return css`
+      .tccBubble{
+        padding:5px;
+        background-color: transparent;
+        box-shadow: none;
+      }
+      .tccBubble > .button{
+        padding:8px;
+        border-radius: 50%;
+        background-color: var(--card-background-color);
+        box-shadow: var(--ha-card-box-shadow);
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        margin: 0 auto;
+      }
+      .tccBubble > p{
+        width:100%; 
+        text-align: center;
+      }
+      .tccBubble > .button > ha-icon{
+        display:block; 
+        text-algin: center;
+      }
+    `;
+
+  }
 }
