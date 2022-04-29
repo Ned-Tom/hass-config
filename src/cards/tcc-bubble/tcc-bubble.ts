@@ -48,7 +48,8 @@ export class TCCBubbleCard extends LitElement {
     }
 
     this.config = {
-      name: 'Boilerplate',
+      name: 'notset',
+      icon: 'mdi:alert-box',
       ...config,
     };
   }
@@ -64,20 +65,36 @@ export class TCCBubbleCard extends LitElement {
   //     getLovelace().setEditMode(true);
   //   }
 
-  //   this.config = {
-  //     name: 'Boilerplate',
-  //     ...config,
-  //   };
-  // }
+
+  // Computed card data
+  private cdata = {
+    bgColor: "var(--card-background-color)",
+    iconColor: "var(--primary-text-color)",
+    lightName: "Bubble"
+  };
 
   // https://lit.dev/docs/components/rendering/
   protected render(): TemplateResult | void {
+
+    if(this.hass.states[this.config.entity].state == 'on'){
+      this.cdata.bgColor = '#FBE6C8';
+      this.cdata.iconColor = '#FF9800';
+    }else{
+      this.cdata.bgColor = "var(--card-background-color)";
+      this.cdata.iconColor = "var(--primary-text-color)";
+    }
+
+    if(this.config.name == 'notset'){
+      this.cdata.lightName = this.hass.states[this.config.entity].attributes.friendly_name;
+    }
+
+
     return html`
       <ha-card class="tccBubble">
-        <div class="button">
-          <ha-icon id="tcc-bc-icon" icon="${ `mdi:alert-box` }"></ha-icon>
+        <div class="button" style="background-color: ${this.cdata.bgColor}; color: ${this.cdata.iconColor};">
+          <ha-icon id="tcc-bc-icon" icon="${this.config.icon}"></ha-icon>
         </div>
-        <p>${ `name` }</p>
+        <p>${this.cdata.lightName}</p>
       </ha-card>
     `;
   }
@@ -93,12 +110,14 @@ export class TCCBubbleCard extends LitElement {
       .tccBubble > .button{
         padding:8px;
         border-radius: 50%;
-        background-color: var(--card-background-color);
         box-shadow: var(--ha-card-box-shadow);
         width: 60px;
         height: 60px;
         padding: 0;
         margin: 0 auto;
+        transition-property: background-color, box-shadow;
+        transition-duration: 280ms;
+        transition-timing-function: ease-out;
       }
       .tccBubble > p{
         width:100%; 
@@ -106,7 +125,10 @@ export class TCCBubbleCard extends LitElement {
       }
       .tccBubble > .button > ha-icon{
         display:block; 
-        text-algin: center;
+        text-align: center;
+        line-height: 58px;
+        width: 60px;
+        height: 60px;
       }
     `;
 
