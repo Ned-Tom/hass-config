@@ -18,7 +18,6 @@
     "allowJs": true,
     "experimentalDecorators": true
   },
-  "include": ["src/cards/*", "./src/tcc.js"],
-  // "include": ["./src/tcc.js"],
+  "include": ["./src/tcc.ts"],
   "exclude": ["node_modules"]
 }
