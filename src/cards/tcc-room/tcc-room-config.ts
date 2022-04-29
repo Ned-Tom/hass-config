@@ -13,8 +13,10 @@ export interface TCCRoomCardConfig extends LovelaceCardConfig {
   // type: string;
   name?: string;
   room_name?: string;
-  icon?: string;
+  room_icon?: string;
   room_color?: string;
+  room_info?: string;
+  room_info_stuffix?: string;
   room_lights?: string;
   // show_warning?: boolean;
   // show_error?: boolean;

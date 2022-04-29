@@ -20,9 +20,17 @@ registerCustomCard({
 
 @customElement('tcc-room')
 export class TCCRoomCard extends LitElement {
+  // Computed card data
+  private cdata = {
+    bgColor: "var(--card-background-color)",
+    infoString: "unavailable",
+    infoCount: "0",
+    temperture: 0
+  };
+
   // public static async getConfigElement(): Promise<LovelaceCardEditor> {
-  //   await import('./editor');
-  //   return document.createElement('boilerplate-card-editor');
+  //   await import('./tcc-room-editor');
+  //   return document.createElement('tcc-room-card-editor');
   // }
 
   public static getStubConfig(): Record<string, unknown> {
@@ -48,22 +56,96 @@ export class TCCRoomCard extends LitElement {
     }
 
     this.config = {
-      name: 'Boilerplate',
+      // name: 'Boilerplate',
+      room_icon: 'mdi:alert-box',
+      room_info: 'notset',
       ...config,
     };
   }
 
+  // https://lit.dev/docs/components/lifecycle/#reactive-update-cycle-performing
+  protected shouldUpdate(changedProps: PropertyValues): boolean {
+    if (!this.config) {
+      return false;
+    }
+
+    return hasConfigOrEntityChanged(this, changedProps, false);
+  }
+
+  protected updated(changedProperties: PropertyValues) {
+    super.updated(changedProperties);
+    if (this.hass && changedProperties.has("hass")) {
+        // this.updateControls();
+        // this.updateBrightness();
+    }
+  }
+
   // https://lit.dev/docs/components/rendering/
   protected render(): TemplateResult | void {
+
+    switch(this.config.room_color){
+      case 'red':
+        this.cdata.bgColor = 'var(--google-red)'
+        break;
+      case 'green':
+        this.cdata.bgColor = 'var(--google-green)'
+        break;
+      case 'yellow':
+        this.cdata.bgColor = 'var(--google-yellow)'
+        break;
+      case 'blue':
+        this.cdata.bgColor = 'var(--google-blue)'
+        break;
+      case 'violet':
+        this.cdata.bgColor = 'var(--google-violet)'
+        break;
+      case 'grey':
+        this.cdata.bgColor = 'var(--google-grey)'
+        break;
+      default:
+        this.cdata.bgColor = 'var(--google-grey)'
+    }
+
+    // var this.cdata.infostring = "unavailable"
+
+    if (typeof this.config.room_lights != "undefined") {
+      // const lights_entityId = this.config.room_lights
+      // const lights_num = hass.states[lights_entityId]
+      // this.cdata.infoCount = this.hass.states[this.config.room_lights].state;
+      // this.cdata.infoCount = "0";
+      // this.cdata.infoCount = this.hass.states[this.config.room_lights] ? this.hass.states[this.config.room_lights].state : "unavailable"
+      this.cdata.infoCount = this.hass.states[this.config.room_lights].state
+    }
+
+    switch(this.cdata.infoCount){
+      case "0":
+        this.cdata.infoString = "All Off - "+this.cdata.infoCount;
+        break;
+      case "1":
+        this.cdata.infoString = "1 Light On";
+        break;
+      case "unavailable":
+        // this.cdata.infoString = "<br/>";
+        this.cdata.infoString = this.cdata.infoCount
+        break;
+      default:
+        this.cdata.infoString = this.cdata.infoCount+" Lights On";
+    }
+
+    if (typeof this.config.room_lights != "undefined") {
+      // this.cdata.temperture = this.hass.states[this.config.room_info].state;
+      this.cdata.temperture = 0
+    }
+
     return html`
-      <ha-card class="tccRoom">
+      <ha-card class="tccRoom" style="background-color: ${this.cdata.bgColor};">
         <div>
-          <p class="tcc-rc-name">name</p>
-          <div class="txt"><br/></div>
+          <p class="tcc-rc-name">${this.config.room_name}</p>
+          <div class="txt">${this.cdata.infoString}</div>
         </div>
-        <div class="tcc-rc-info">
-          <ha-icon id="alert" icon="mdi:alert-box"></ha-icon>
-          somting
+        <div class="tcc-rc-info" style="color: ${this.cdata.bgColor}; grid-template-columns: ${ this.config.room_info == 'notset' ? `fr` : `min-content auto` };">
+          <ha-icon icon="${this.config.room_icon}"></ha-icon>
+          <p>${ this.config.room_info == 'notset' ? " " : this.cdata.temperture+" "+this.config.room_info_stuffix }</p>
         </div>
       </ha-card>
     `;
@@ -82,7 +164,7 @@ export class TCCRoomCard extends LitElement {
       .tccRoom > div > .tcc-rc-name{
         font-weight: bold;
         font-size: 16px;
-        margin: 0;
+        margin: 0 5px;
       }
       .tccRoom > .tcc-rc-info{
         padding:8px;
@@ -90,8 +172,14 @@ export class TCCRoomCard extends LitElement {
         background-color: var(--card-background-color);
         box-shadow: var(--ha-card-box-shadow);
         display: grid;
-        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;
+      }
+      .tccRoom > .tcc-rc-info > ha-icon{
+        text-align: center;
+      }
+      .tccRoom > .tcc-rc-info > p{
+        margin:0;
+        text-align: right;
       }
     `;
     
