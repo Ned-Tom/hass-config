@@ -14,7 +14,11 @@ class tccroomcard extends HTMLElement {
           padding:8px;
           border-radius: var(--ha-card-border-radius);
           background-color: var(--card-background-color);
-          box-shadow: var(--ha-card-box-shadow);">
+          box-shadow: var(--ha-card-box-shadow);
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr;
+          ">
             <ha-icon id="alert" icon="mdi:alert-box"></ha-icon>
             somting
           </div>
@@ -25,11 +29,11 @@ class tccroomcard extends HTMLElement {
       this.info = this.querySelector('.tcc-rc-info')
     }
 
-    const entityId = this.config.entity
-    const state = hass.states[entityId]
-    const stateStr = state ? state.state : 'unavailable'
+    // const entityId = this.config.entity
+    // const state = hass.states[entityId]
+    // const stateStr = state ? state.state : 'unavailable'
 
-    this.info.innerHTML = 'hello card'
+    // this.info.innerHTML = 'hello card'
     this.name.innerHTML = this.config.room_name
     
     switch(this.config.room_color){
@@ -75,9 +79,9 @@ class tccroomcard extends HTMLElement {
   }
 
   setConfig(config) {
-    if (!config.entity) {
-      throw new Error('You need to define an entity')
-    }
+    // if (!config.entity) {
+    //   throw new Error('You need to define an entity')
+    // }
     if (!config.room_name ) {
       throw new Error('You need to define an room_name')
     }

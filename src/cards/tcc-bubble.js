@@ -31,6 +31,7 @@ class tccbubblecard extends HTMLElement {
     const stateStr = state ? state.state : 'unavailable'
 
     this.name.innerHTML = this.config.name
+    // this.name.innerHTML = hass.state_attr(entityId,'friendly_name')
     this.icon.setAttribute("icon", this.config.icon)
   }
 
@@ -38,6 +39,11 @@ class tccbubblecard extends HTMLElement {
     if (!config.entity) {
       throw new Error('You need to define an entity')
     }
+    // if (!config.name) {
+    //   // config.name = hass.states[config.entity].attributes.friendly_name
+    //   config.name = "Hello Name"
+    // }
+
     this.config = config
   }
 
