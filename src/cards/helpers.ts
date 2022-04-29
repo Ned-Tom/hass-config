@@ -9,6 +9,7 @@ export function registerCustomCard(params: RegisterCardParams) {
   };
   windowWithCards.customCards = windowWithCards.customCards || [];
   windowWithCards.customCards.push({
+    ...params,
       preview: true,
   });
 }
