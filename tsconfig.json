@@ -16,6 +16,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "allowJs": true,
+    "moduleResolution": "node",
     "experimentalDecorators": true
   },
   "include": ["./src/tcc.ts"],
