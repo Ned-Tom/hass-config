@@ -1,6 +1,7 @@
 import { LitElement, html, TemplateResult, css, PropertyValues, CSSResultGroup } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
-import { registerCustomCard } from "../helpers";
+import { registerCustomCard } from "../../helpers";
+import { actionHandler } from "../../helpers/action-handler";
 import type { TCCBubbleCardConfig } from './tcc-bubble-config';
 import {
   HomeAssistant,
@@ -20,13 +21,23 @@ registerCustomCard({
 
 @customElement('tcc-bubble')
 export class TCCBubbleCard extends LitElement {
-  // public static async getConfigElement(): Promise<LovelaceCardEditor> {
-  //   await import('./editor');
-  //   return document.createElement('boilerplate-card-editor');
+  public static async getConfigElement(): Promise<LovelaceCardEditor> {
+    await import('./tcc-bubble-editor');
+    // return document.createElement('boilerplate-card-editor');
+    return document.createElement('tcc-bubble-card-editor') as LovelaceCardEditor;
+  }
+
+  // public static getStubConfig(): Record<string, unknown> {
+  //   return {};
   // }
 
-  public static getStubConfig(): Record<string, unknown> {
-    return {};
+  public static async getStubConfig(hass: HomeAssistant): Promise<TCCBubbleCardConfig> {
+    const entities = Object.keys(hass.states);
+    const lights = entities.filter((e) => ["light"].includes(e.split(".")[0]));
+    return {
+        type: `custom:tcc-bubble`,
+        entity: lights[0],
+    };
   }
 
   // TODO Add any properities that should cause your element to re-render here
@@ -48,55 +59,122 @@ export class TCCBubbleCard extends LitElement {
     }
 
     this.config = {
+      tap_action: {
+        action: "toggle",
+      },
+      hold_action: {
+        action: "more-info",
+      },
       name: 'notset',
-      icon: 'mdi:alert-box',
+      icon: 'mdi:lightbulb-outline',
       ...config,
     };
   }
 
-  // // https://lit.dev/docs/components/properties/#accessors-custom
-  // public setConfig(config: BoilerplateCardConfig): void {
-  //   // TODO Check for required fields and that they are of the proper format
-  //   if (!config) {
-  //     throw new Error(localize('common.invalid_configuration'));
-  //   }
-
-  //   if (config.test_gui) {
-  //     getLovelace().setEditMode(true);
-  //   }
-
-
-  // Computed card data
-  private cdata = {
-    bgColor: "var(--card-background-color)",
-    iconColor: "var(--primary-text-color)",
-    lightName: "Bubble"
-  };
-
   // https://lit.dev/docs/components/rendering/
   protected render(): TemplateResult | void {
 
+      // Computed card data
+    let cdata = {
+      bgColor: "var(--card-background-color)" as string,
+      iconColor: "var(--primary-text-color)" as string,
+      lightName: "Bubble" as string,
+      // lightName: this.hass.states[this.config.entity].attributes.friendly_name
+    };
+
     if(this.hass.states[this.config.entity].state == 'on'){
-      this.cdata.bgColor = '#FBE6C8';
-      this.cdata.iconColor = '#FF9800';
+      cdata.bgColor = '#FBE6C8';
+      cdata.iconColor = '#FF9800';
     }else{
-      this.cdata.bgColor = "var(--card-background-color)";
-      this.cdata.iconColor = "var(--primary-text-color)";
+      cdata.bgColor = "var(--card-background-color)";
+      cdata.iconColor = "var(--primary-text-color)";
     }
 
     if(this.config.name == 'notset'){
-      this.cdata.lightName = this.hass.states[this.config.entity].attributes.friendly_name;
+      // cdata.lightName = this.hass.states[this.config.entity].attributes.friendly_name;
+      cdata.lightName = String(this.hass.states[this.config.entity].attributes.friendly_name)
     }
+
+    // if(this.hass.states[this.config.entity].attributes.friendly_name){
+    //   cdata.lightName = String(this.hass.states[this.config.entity].attributes.friendly_name)
+    // }
+
+
+    // return html`
+    //   <ha-card class="tccBubble" @action=${this._handleAction}
+    //   .actionHandler=${actionHandler({
+    //       hasHold: hasAction(this._config.hold_action),
+    //       hasDoubleClick: hasAction(this._config.double_tap_action),
+    //   })}>
+    //     <div class="button" style="background-color: ${cdata.bgColor}; color: ${cdata.iconColor};">
+    //       <ha-icon id="tcc-bc-icon" icon="${this.config.icon}"></ha-icon>
+    //     </div>
+    //     <p>${cdata.lightName}</p>
+    //   </ha-card>
+    // `;
+
+    // return html`
+    //   <ha-card class="tccBubble">
+    //     <div class="button" style="background-color: ${cdata.bgColor}; color: ${cdata.iconColor};">
+    //       <ha-icon id="tcc-bc-icon" icon="${this.config.icon}"></ha-icon>
+    //     </div>
+    //     <p>${cdata.lightName}</p>
+    //   </ha-card>
+    // `;
+
+    // return html`
+    //   <ha-card class="tccBubble" @click="${(e) => console.log(e.target)}">
+    //     <div class="button" style="background-color: ${cdata.bgColor}; color: ${cdata.iconColor};">
+    //       <ha-icon id="tcc-bc-icon" icon="${this.config.icon}"></ha-icon>
+    //     </div>
+    //     <p>${cdata.lightName}</p>
+    //   </ha-card>
+    // `;
+
+    // return html`
+    //   <ha-card class="tccBubble" @click="${this.toggle(this.config.entity)}">
+    //     <div class="button" style="background-color: ${cdata.bgColor}; color: ${cdata.iconColor};">
+    //       <ha-icon id="tcc-bc-icon" icon="${this.config.icon}"></ha-icon>
+    //     </div>
+    //     <p>${cdata.lightName}</p>
+    //   </ha-card>
+    // `;
 
 
     return html`
-      <ha-card class="tccBubble">
-        <div class="button" style="background-color: ${this.cdata.bgColor}; color: ${this.cdata.iconColor};">
+      <ha-card class="tccBubble"
+        @action=${this._handleAction}
+        .actionHandler=${actionHandler({
+            hasHold: hasAction(this.config.hold_action),
+            hasDoubleClick: hasAction(this.config.double_tap_action),
+        })}
+      >
+        <div class="button" style="background-color: ${cdata.bgColor}; color: ${cdata.iconColor};">
           <ha-icon id="tcc-bc-icon" icon="${this.config.icon}"></ha-icon>
         </div>
-        <p>${this.cdata.lightName}</p>
+        <p>${cdata.lightName}</p>
       </ha-card>
     `;
+  }
+
+
+
+  // _toggle(state) {
+  //   this.hass.callService("homeassistant", "toggle", {
+  //     entity_id: state.entity_id
+  //   });
+  // }
+
+  // toggle(id) {
+  //   // this.hass.callService("homeassistant", "toggle", {
+  //   //   entity_id: id
+  //   // });
+  //   console.log(id)
+  // }
+
+  private _handleAction(ev: ActionHandlerEvent) {
+    handleAction(this, this.hass!, this.config!, ev.detail.action!);
+    // console.log("Do somting!")
   }
 
   // https://lit.dev/docs/components/styles/
