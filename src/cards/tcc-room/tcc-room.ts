@@ -1,6 +1,6 @@
 import { LitElement, html, TemplateResult, css, PropertyValues, CSSResultGroup } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
-import { registerCustomCard } from "../helpers";
+import { registerCustomCard } from "../../helpers";
 import type { TCCRoomCardConfig } from './tcc-room-config';
 import {
   HomeAssistant,
@@ -20,10 +20,13 @@ registerCustomCard({
 
 @customElement('tcc-room')
 export class TCCRoomCard extends LitElement {
-  // public static async getConfigElement(): Promise<LovelaceCardEditor> {
-  //   await import('./tcc-room-editor');
-  //   return document.createElement('tcc-room-card-editor');
-  // }
+  public static async getConfigElement(): Promise<LovelaceCardEditor> {
+    await import('./tcc-room-editor');
+    // return document.createElement('tcc-room-card-editor');
+    // return document.createElement(LIGHT_CARD_EDITOR_NAME) as LovelaceCardEditor;
+    return document.createElement('tcc-room-card-editor') as LovelaceCardEditor;
+  }
+  
 
   public static getStubConfig(): Record<string, unknown> {
     return {};
@@ -132,6 +135,13 @@ export class TCCRoomCard extends LitElement {
       default:
         this.cdata.infoString = this.cdata.infoCount+" Lights On"
     }
+    
+
+    // if(this.config.room_info == 'notset'){
+    //   this.cdata.infoString = ' ';
+    // }else{
+    //   this.cdata.infoString = this.hass.states[String(this.config.room_info)].state+" "+this.config.room_info_stuffix
+    // }
 
     // if (typeof this.config.room_info != "undefined") {
       // this.cdata.temperture = this.hass.states[this.config.room_info].state;
@@ -146,7 +156,7 @@ export class TCCRoomCard extends LitElement {
         </div>
         <div class="tcc-rc-info" style="color: ${this.cdata.bgColor}; grid-template-columns: ${ this.config.room_info == 'notset' ? `fr` : `min-content auto` };">
           <ha-icon icon="${this.config.room_icon}"></ha-icon>
-          <p>${ this.config.room_info == 'notset' ? " " : this.hass.states[this.config.room_info].state+" "+this.config.room_info_stuffix }</p>
+          <p>${ this.config.room_info == 'notset' ? " " : this.hass.states[String(this.config.room_info)].state+" "+this.config.room_info_stuffix }</p>
         </div>
       </ha-card>
     `;
@@ -177,7 +187,7 @@ export class TCCRoomCard extends LitElement {
         padding:8px;
         border-radius: var(--ha-card-border-radius);
         background-color: var(--card-background-color);
-        box-shadow: var(--ha-card-box-shadow);
+        box-shadow: var( --ha-card-box-shadow, 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12) );
         display: grid;
         grid-template-rows: 1fr;
       }
