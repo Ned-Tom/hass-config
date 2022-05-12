@@ -1,7 +1,9 @@
 import { version } from "../package.json";
 
-export { TCCRoomCard } from "./cards/tcc-room/tcc-room";
 export { TCCBubbleCard } from "./cards/tcc-bubble/tcc-bubble";
+export { TCCCameraCard } from "./cards/tcc-camera/tcc-camera";
+export { TCCRoomCard } from "./cards/tcc-room/tcc-room";
+export { TCCSpeedtestCard } from "./cards/tcc-speedtest/tcc-speedtest";
 
 // Message when loaded in log
 console.info(
