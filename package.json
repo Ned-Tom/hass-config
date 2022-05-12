@@ -20,6 +20,15 @@
   },
   "homepage": "https://github.com/Ned-Tom/hass-config#readme",
   "dependencies": {
+    "@lit-labs/scoped-registry-mixin": "^1.0.0",
+    "@material/mwc-formfield": "^0.25.3",
+    "@material/mwc-list": "^0.25.3",
+    "@material/mwc-menu": "^0.25.3",
+    "@material/mwc-notched-outline": "^0.25.3",
+    "@material/mwc-ripple": "^0.25.3",
+    "@material/mwc-select": "^0.25.3",
+    "@material/mwc-switch": "^0.25.3",
+    "@material/mwc-textfield": "^0.25.3",
     "custom-card-helpers": "^1.9.0",
     "lit": "^2.2.3"
   },
