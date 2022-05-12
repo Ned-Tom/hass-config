@@ -53,11 +53,25 @@ export class TCCBubbleCardEditor extends ScopedRegistryHost(LitElement) implemen
     //   return html``;
     // }
 
+    function selectentities(value){
+      if(value.startsWith('light') || value.startsWith('group'))
+      return value
+    }
+
     // You can restrict on domain type
-    const entities = Object.keys(this.hass.states);
+    // const entities = Object.keys(this.hass.states);
+    const entities = Object.keys(this.hass.states).filter(selectentities);
+    // console.log(entities)
+    // console.log(this.hass.states)
+    // const lights = entities.filter(function(value){
+    //   if(value.startsWith('light') || value.startsWith('group'))
+    //   return value
+    // })
+    // console.log(lights)
+
 
     return html`
-      <mwc-select
+      <!--<mwc-select
         naturalMenuWidth
         fixedMenuPosition
         label="Entity (Required)"
@@ -71,14 +85,17 @@ export class TCCBubbleCardEditor extends ScopedRegistryHost(LitElement) implemen
         })}
       </mwc-select>
 
+      <div class="mdc-select mdc-select--no-label mdc-select--filled mdc-select--with-leading-icon">-->
 
-      <!--<select name="entity" id="entity" value=${this._entity} 
+      <select name="entity" id="entity" value=${this._entity} class="mdc-select"
       @selected=${this._valueChanged}
       @closed=${(ev) => ev.stopPropagation()}>
         ${entities.map((entity) => {
           return html`<option value=${entity}>${entity}</option>`;
         })}
-      </select>-->
+      </select>
+
+      <p>${this._entity}</p>
 
       <p>Some future Editor</p>
     `;
@@ -118,17 +135,17 @@ export class TCCBubbleCardEditor extends ScopedRegistryHost(LitElement) implemen
     fireEvent(this, 'config-changed', { config: this._config });
   }
 
-  static styles: CSSResultGroup = css`
-    mwc-select,
-    mwc-textfield {
-      margin-bottom: 16px;
-      display: block;
-    }
-    mwc-formfield {
-      padding-bottom: 8px;
-    }
-    mwc-switch {
-      --mdc-theme-secondary: var(--switch-checked-color);
-    }
-  `;
+  // static styles: CSSResultGroup = css`
+  //   mwc-select,
+  //   mwc-textfield {
+  //     margin-bottom: 16px;
+  //     display: block;
+  //   }
+  //   mwc-formfield {
+  //     padding-bottom: 8px;
+  //   }
+  //   mwc-switch {
+  //     --mdc-theme-secondary: var(--switch-checked-color);
+  //   }
+  // `;
 }
