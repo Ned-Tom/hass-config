@@ -78,7 +78,8 @@ export class TCCBubbleCard extends LitElement {
     let cdata = {
       bgColor: "var(--card-background-color)" as string,
       iconColor: "var(--primary-text-color)" as string,
-      lightName: "Bubble" as string,
+      // lightName: "Bubble" as string,
+      lightName: this.config.name == 'notset'? "Bubble" : this.config.name ,
       // lightName: this.hass.states[this.config.entity].attributes.friendly_name
     };
 
